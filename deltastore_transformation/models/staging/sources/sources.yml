@@ -1,0 +1,75 @@
+version: 2
+
+sources:
+  - name: old_store
+    schema: old_store
+    tables:
+      - name: customers
+        description: "this is the customers table"
+        freshnes:
+          warn_after: {count: 1 , period: day}
+        etl_loaded_at: updated_at
+        columns:
+          - name: customer_id 
+            data-tests:
+              - not null
+              - unique
+
+      - name: orders
+        description: "this is the orders table"
+        columns:
+          - name: order_id 
+            data-tests:
+              - not null
+              - unique
+          
+      - name: products
+        description: "this is the products table"
+        columns:
+          - name: product_id 
+            data-tests:
+              - not null
+              - unique
+
+      - name: order_items
+        description: "this is the order_item table"
+        columns:
+          - name: order_item_id 
+            data-tests:
+              - not null
+              - unique
+
+      - name: suppliers
+        description: "this is the suppliers table"
+        columns:
+          - name: supplier_id 
+            data-tests:
+              - not null
+              - unique
+
+      - name: reviews
+        description: "this is the reviews table"
+        columns:
+          - name: review_id 
+            data-tests:
+              - not null
+              - unique
+
+              
+  - name: new_store
+    schema: new_store
+    tables:
+      - name: products
+        description: "this table conatians information about the table products"
+        columns: 
+          - name: id
+            data-tests:
+              - unique 
+              - not null
+      - name: users
+        description: "this table contains inforamtion about the table users"
+        columns:
+          - name: id
+            data-tests:
+              - unique 
+              - not null
