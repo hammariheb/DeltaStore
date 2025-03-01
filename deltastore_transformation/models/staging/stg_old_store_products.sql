@@ -15,6 +15,7 @@ products as (
         category,
         cast(round(price,2) as float) as price,
         supplier_id,
+        'old_store' as source_store,
         updated_at
     from source
 )

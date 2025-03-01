@@ -9,7 +9,8 @@ orders as (
         order_id,
         product_id,
         quantity,
-        cast(round(price_at_purchase,2) as float) as price_at_purchase
+        cast(round(price_at_purchase,2) as float) as price_at_purchase,
+        'old store' as source_store
     from source
 )
 select *

@@ -10,7 +10,8 @@ reviews as (
         customer_id,
         rating as rating_stars,
         review_text,
-        cast(review_date as date) as review_date
+        cast(review_date as date) as review_date,
+        'old store' as source_store
     from source
 )
 select *

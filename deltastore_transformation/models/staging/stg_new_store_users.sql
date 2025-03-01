@@ -5,7 +5,7 @@ with source as (
 
 new_store_users as (
     select
-        id as user_id,
+        id as customer_id,
         firstname as first_name,
         lastname as last_name,
         concat(firstname,' ', lastname) as full_name,
@@ -18,6 +18,7 @@ new_store_users as (
                 then concat(number,' ', street) 
             else null 
             end as address,
+        'new store' as source_store, 
         created_at,
         updated_at
     from source

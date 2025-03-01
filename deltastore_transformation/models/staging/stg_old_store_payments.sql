@@ -9,7 +9,8 @@ payments as (
         order_id,
         payment_method,
         cast(round(amount,2) as float) as amount,
-        transaction_status
+        transaction_status,
+        'old store' as source_store
     from source
 )
 select *
