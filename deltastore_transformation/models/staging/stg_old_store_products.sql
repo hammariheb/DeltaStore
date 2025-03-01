@@ -7,6 +7,11 @@ products as (
     select 
         product_id,
         product_name,
+            case 
+            when product_name is not null 
+            then 'This is a ' + product_name + ' in the category ' + category
+            else 'No product information available'
+        end as description,
         category,
         cast(round(price,2) as float) as price,
         supplier_id,
