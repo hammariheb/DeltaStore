@@ -11,7 +11,8 @@ suppliers as (
         RIGHT(contact_name, LEN(contact_name) - CHARINDEX(' ', contact_name)) AS supplier_last_name,
         phone_number,
         email,
-        address
+        address,
+        'old store' as source_store
     from source
 )
 select *

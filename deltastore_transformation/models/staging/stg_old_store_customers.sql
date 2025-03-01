@@ -12,6 +12,7 @@ customers as (
         email,
         address,
         cast (created_at as timestamp) as created_at,
+        'old store' as source_store,
         updated_at
     from source
 )
