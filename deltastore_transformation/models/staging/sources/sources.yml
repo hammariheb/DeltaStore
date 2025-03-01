@@ -3,73 +3,96 @@ version: 2
 sources:
   - name: old_store
     schema: old_store
+    freshness:
+      warn_after: {count: 1, period: day}
+    loaded_at_field: updated_at
+
     tables:
       - name: customers
-        description: "this is the customers table"
-        freshnes:
-          warn_after: {count: 1 , period: day}
-        etl_loaded_at: updated_at
+        description: "This is the customers table"
+        freshness:
+          warn_after: {count: 1, period: day}
         columns:
-          - name: customer_id 
-            data-tests:
-              - not null
+          - name: customer_id
+            data_tests:
+              - not_null
               - unique
 
       - name: orders
-        description: "this is the orders table"
+        description: "This is the orders table"
+        freshness: null
         columns:
           - name: order_id 
-            data-tests:
-              - not null
+            data_tests:
+              - not_null
               - unique
           
       - name: products
-        description: "this is the products table"
+        description: "This is the products table"
         columns:
           - name: product_id 
-            data-tests:
-              - not null
+            data_tests:
+              - not_null
               - unique
 
       - name: order_items
-        description: "this is the order_item table"
+        description: "This is the order_items table"
+        freshness: null
         columns:
           - name: order_item_id 
-            data-tests:
-              - not null
+            data_tests:
+              - not_null
+              - unique
+
+      - name: payment
+        description: "This is the payments table"
+        freshness: null
+        columns:
+          - name: payment_id
+            data_tests:
+              - not_null
               - unique
 
       - name: suppliers
-        description: "this is the suppliers table"
+        description: "This is the suppliers table"
+        freshness: null
         columns:
           - name: supplier_id 
-            data-tests:
-              - not null
+            data_tests:
+              - not_null
               - unique
 
       - name: reviews
-        description: "this is the reviews table"
+        description: "This is the reviews table"
+        freshness: null
         columns:
           - name: review_id 
-            data-tests:
-              - not null
+            data_tests:
+              - not_null
               - unique
 
-              
   - name: new_store
     schema: new_store
     tables:
       - name: products
-        description: "this table conatians information about the table products"
+        description: "This table contains information about products"
+        freshness:
+          warn_after: {count: 1, period: day}
         columns: 
           - name: id
-            data-tests:
+            data_tests:
               - unique 
-              - not null
+              - not_null
+
       - name: users
-        description: "this table contains inforamtion about the table users"
+        description: "This table contains information about users"
         columns:
           - name: id
-            data-tests:
+            data_tests:
               - unique 
-              - not null
+              - not_null
+
+      - name: carts
+        description: "This table contains information about carts"
+        freshness: null
+        columns: []
