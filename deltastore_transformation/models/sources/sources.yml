@@ -26,8 +26,13 @@ sources:
             data_tests:
               - not_null
               - unique
+          - name: customer_id
+            data_tests:
+              - relationships:
+                  to: source('old_store','customers')
+                  field: customer_id
           - name: order_date
-            tests:
+            data_tests:
               - check_valid_dates
           
       - name: products
@@ -46,6 +51,17 @@ sources:
             data_tests:
               - not_null
               - unique
+          - name: order_id
+            data_tests:
+              - relationships:
+                  to: source('old_store','orders')
+                  field: order_id
+          - name: product_id
+            data_tests:
+              - relationships:
+                  to: source('old_store','products')
+                  field: product_id
+          
 
       - name: payment
         description: "This is the payments table"
@@ -55,6 +71,10 @@ sources:
             data_tests:
               - not_null
               - unique
+          - name: transaction_status
+            data_tests:
+              - accepted_values:
+                  values: ['Completed','Pending','Failed']
            
       - name: suppliers
         description: "This is the suppliers table"
@@ -74,7 +94,7 @@ sources:
               - not_null
               - unique
           - name: review_date
-            tests:
+            data_tests:
             - check_valid_dates
 
   - name: new_store
