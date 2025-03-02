@@ -97,4 +97,4 @@ sources:
 
 data-tests:
    - name: assert_order_amount_is_positive
-     description: " this is a test to check if all the payments amounts are positive"
+     description: " this is a test to check if the total amounts of orders are positive"
