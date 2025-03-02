@@ -73,6 +73,9 @@ sources:
             data_tests:
               - not_null
               - unique
+          - name: review_date
+            tests:
+            - check_valid_dates
 
   - name: new_store
     schema: new_store

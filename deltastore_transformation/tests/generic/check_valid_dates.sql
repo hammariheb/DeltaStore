@@ -2,7 +2,7 @@
 
 SELECT *
 FROM {{ model }}
-WHERE {{ column_name }} < CAST('2019-01-01' AS DATE) 
+WHERE {{ column_name }} < CAST('2020-01-01' AS DATE) 
    OR {{ column_name }} > CAST(GETDATE() AS DATE)
 
 {% endtest %}
