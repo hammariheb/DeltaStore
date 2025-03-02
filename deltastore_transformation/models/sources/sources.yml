@@ -26,6 +26,9 @@ sources:
             data_tests:
               - not_null
               - unique
+          - name: order_date
+            tests:
+              - check_valid_dates
           
       - name: products
         description: "This is the products table"
@@ -91,8 +94,3 @@ sources:
             data_tests:
               - unique 
               - not_null
-
-      - name: carts
-        description: "This table contains information about carts"
-        freshness: null
-        columns: []
