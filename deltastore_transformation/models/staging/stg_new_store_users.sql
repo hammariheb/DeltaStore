@@ -11,7 +11,7 @@ new_store_users as (
         concat(firstname,' ', lastname) as full_name,
         email,
         city,
-        phone,
+        phone as phone_number,
         case 
             when 
                 street is not null and number is not null 
