@@ -11,9 +11,10 @@ customers as (
         phone_number,
         email,
         address,
-        cast (created_at as timestamp) as created_at,
+        RIGHT(address, CHARINDEX(',', REVERSE(address)+ ',') -1) AS city,
+        created_at,
         'old store' as source_store,
-        updated_at
+        coalesce(updated_at, created_at) as updated_at 
     from source
 )
 select *
