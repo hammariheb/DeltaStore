@@ -17,7 +17,21 @@ sources:
             data_tests:
               - not_null
               - unique
-    
+
+      - name: shipments
+        description: "this is the sshipments table"
+        feshness: null
+        columns:
+          - name: shipment_id
+            data_tests:
+              - not_null
+              - unique
+          - name: shipment_date
+            data_tests:
+              - check_valid_dates
+          - name: delivery_date
+            data_tests:
+              - check_valid_dates
         
       - name: orders
         description: "This is the orders table"
