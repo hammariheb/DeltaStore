@@ -14,7 +14,7 @@ customers as (
         RIGHT(address, CHARINDEX(',', REVERSE(address)+ ',') -1) AS city,
         created_at,
         'old store' as source_store,
-        coalesce(updated_at, created_at) as updated_at 
+        updated_at 
     from source
 )
 select *

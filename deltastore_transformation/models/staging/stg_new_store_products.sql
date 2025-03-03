@@ -11,6 +11,7 @@ new_sotre_products as (
         category,
         price,
         rating_rate,
+        Null as supplier_id,
         'new store' as source_store,
         updated_at
     from source
