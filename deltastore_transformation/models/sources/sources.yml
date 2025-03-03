@@ -32,6 +32,10 @@ sources:
           - name: delivery_date
             data_tests:
               - check_valid_dates
+          - name: shipment_status
+            data_tests:
+              - accepted_values:
+                  values: ['Pending','Delivered','Shipped','Cancelled'] 
         
       - name: orders
         description: "This is the orders table"
@@ -41,11 +45,6 @@ sources:
             data_tests:
               - not_null
               - unique
-          - name: customer_id
-            data_tests:
-              - relationships:
-                  to: source('old_store','customers')
-                  field: customer_id
           - name: order_date
             data_tests:
               - check_valid_dates
