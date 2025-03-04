@@ -13,6 +13,8 @@ models:
         data_type: string
       - name: city 
         data_type: string
+      - name: country_name
+        data_type: string
       - name: created_at
         data_type: datetime
       - name: email
