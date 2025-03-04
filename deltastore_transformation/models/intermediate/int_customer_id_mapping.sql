@@ -19,7 +19,7 @@ with products as (
         phone_number,
         email,
         address,
-        city,
+        cast(city as varchar) as city,
         source_store, 
         created_at,
         updated_at

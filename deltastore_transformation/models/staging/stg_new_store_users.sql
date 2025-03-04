@@ -10,7 +10,7 @@ new_store_users as (
         lastname as last_name,
         concat(firstname,' ', lastname) as full_name,
         email,
-        city,
+        UPPER(SUBSTRING(city, 1, 1)) + LOWER(SUBSTRING(city, 2, LEN(city) - 1)) AS city,
         phone as phone_number,
         case 
             when 
