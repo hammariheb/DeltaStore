@@ -31,8 +31,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 vars: 
   dbt_date_time_zone: 'Europe/Paris'  
-  source_store: 'old_store'
-  
+ 
+ 
 models:
   deltastore_transformation: 
     staging:
