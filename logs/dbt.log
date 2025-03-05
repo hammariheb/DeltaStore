@@ -1,0 +1,434 @@
+[0m16:20:44.834720 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017A6184B020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017A62611340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017A62380830>]}
+
+
+============================== 16:20:44.840040 | f83690ec-5ff9-4f9a-8e5c-700db32374f2 ==============================
+[0m16:20:44.840040 [info ] [MainThread]: Running with dbt=1.8.7
+[0m16:20:44.841410 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt build', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:20:44.841410 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m16:20:44.845421 [debug] [MainThread]: Command `dbt build` failed at 16:20:44.845421 after 0.17 seconds
+[0m16:20:44.845421 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017A626A47A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017A61369100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017A62611340>]}
+[0m16:20:44.845421 [debug] [MainThread]: Flushing usage events
+[0m13:27:04.559247 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028BE4951400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028BE4952A20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028BE18F5310>]}
+
+
+============================== 13:27:04.562223 | e7e02b8b-1307-4502-b972-06d7061997b7 ==============================
+[0m13:27:04.562223 [info ] [MainThread]: Running with dbt=1.8.7
+[0m13:27:04.562223 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt snapshot', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m13:27:04.575233 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m13:27:04.578327 [debug] [MainThread]: Command `dbt snapshot` failed at 13:27:04.578327 after 0.22 seconds
+[0m13:27:04.578327 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028BE47FCA40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028BE4757F80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028BE18F5310>]}
+[0m13:27:04.582616 [debug] [MainThread]: Flushing usage events
+[0m15:59:52.767964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A8887B6B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A8887B1A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A8824DF40>]}
+
+
+============================== 15:59:52.783588 | 7426c379-f165-44ce-b25a-887d087e0151 ==============================
+[0m15:59:52.783588 [info ] [MainThread]: Running with dbt=1.8.7
+[0m15:59:52.783588 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt snapshot', 'send_anonymous_usage_stats': 'True'}
+[0m15:59:52.783588 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m15:59:52.783588 [debug] [MainThread]: Command `dbt snapshot` failed at 15:59:52.783588 after 0.23 seconds
+[0m15:59:52.799216 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A8891F590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A88B7D190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A8887B1A0>]}
+[0m15:59:52.800695 [debug] [MainThread]: Flushing usage events
+[0m20:02:40.835613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FFB3911640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FFB3A12120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FFB3912360>]}
+
+
+============================== 20:02:40.844855 | b039ba56-eb7a-4cfe-b18a-36125417b63d ==============================
+[0m20:02:40.844855 [info ] [MainThread]: Running with dbt=1.8.7
+[0m20:02:40.847289 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m20:02:40.849373 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:02:40.851807 [debug] [MainThread]: Command `dbt run` failed at 20:02:40.851807 after 0.20 seconds
+[0m20:02:40.851807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FFB3826FC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FFB3A12120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FFB331FCE0>]}
+[0m20:02:40.851807 [debug] [MainThread]: Flushing usage events
+[0m20:53:29.288716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223B1F9EB70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223AEF41A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223B1F9EC90>]}
+
+
+============================== 20:53:29.307370 | f38df498-7458-4790-9440-c9cfa45fd20c ==============================
+[0m20:53:29.307370 [info ] [MainThread]: Running with dbt=1.8.7
+[0m20:53:29.307370 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:53:29.310653 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:53:29.310653 [debug] [MainThread]: Command `cli deps` failed at 20:53:29.310653 after 0.31 seconds
+[0m20:53:29.310653 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223B1F7CB90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223B1F9CEF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223B1F9EAE0>]}
+[0m20:53:29.310653 [debug] [MainThread]: Flushing usage events
+[0m20:53:33.991550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021355236A80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021354CE1B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021355235580>]}
+
+
+============================== 20:53:33.993872 | 49cb4977-4890-4838-862d-8faf6bc26ece ==============================
+[0m20:53:33.993872 [info ] [MainThread]: Running with dbt=1.8.7
+[0m20:53:33.999882 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:53:34.002066 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:53:34.002066 [debug] [MainThread]: Command `cli deps` failed at 20:53:34.002066 after 0.21 seconds
+[0m20:53:34.002066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000213558404D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021355236A80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021355236BD0>]}
+[0m20:53:34.002066 [debug] [MainThread]: Flushing usage events
+[0m20:54:01.756980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000217FE6AD160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021781050AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021781052720>]}
+
+
+============================== 20:54:01.759540 | 8705c9cb-c431-414b-b57b-e705ef8e513a ==============================
+[0m20:54:01.759540 [info ] [MainThread]: Running with dbt=1.8.7
+[0m20:54:01.759540 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt clean', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:54:01.767063 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:54:01.770882 [debug] [MainThread]: Command `dbt clean` failed at 20:54:01.770882 after 0.19 seconds
+[0m20:54:01.770882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000217813C4170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000217810C5A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021781050AD0>]}
+[0m20:54:01.770882 [debug] [MainThread]: Flushing usage events
+[0m21:14:23.281494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CD64EDD4F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CD64C19F70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CD64C8CC20>]}
+
+
+============================== 21:14:23.289954 | 2d607670-0fb7-4e7a-b6ce-07a7e7f27a43 ==============================
+[0m21:14:23.289954 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:14:23.289954 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'True'}
+[0m21:14:23.289954 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:14:23.289954 [debug] [MainThread]: Command `cli deps` failed at 21:14:23.289954 after 2.94 seconds
+[0m21:14:23.297974 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CD64C19F70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CD6475D0A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002CD6475F7D0>]}
+[0m21:14:23.297974 [debug] [MainThread]: Flushing usage events
+[0m21:14:28.329992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D627A5D580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6281287A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D62812BEF0>]}
+
+
+============================== 21:14:28.338387 | b45f0202-0c98-45d2-a577-9af5f161383b ==============================
+[0m21:14:28.338387 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:14:28.338387 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:14:28.344762 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:14:28.346777 [debug] [MainThread]: Command `cli deps` failed at 21:14:28.346777 after 1.04 seconds
+[0m21:14:28.346777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6282965A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6283D98E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6287B9730>]}
+[0m21:14:28.352075 [debug] [MainThread]: Flushing usage events
+[0m21:14:29.421332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D31C9A390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D2EE91C70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D30E3A240>]}
+
+
+============================== 21:14:29.431345 | 9ba06868-8e97-4c1f-8193-2a64d67a4bc8 ==============================
+[0m21:14:29.431345 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:14:29.434979 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'c:\\Users\\Iheb\\Desktop\\Cours\\Projects\\DeltaStore\\deltastore_transformation\\dbt_packages\\dbt_utils\\integration_tests', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:14:29.436885 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:14:29.436885 [debug] [MainThread]: Command `cli deps` failed at 21:14:29.436885 after 0.28 seconds
+[0m21:14:29.436885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D31C9A390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D31F86600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D30E3A240>]}
+[0m21:14:29.436885 [debug] [MainThread]: Flushing usage events
+[0m21:14:31.183467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1284649B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A128943980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1284669C0>]}
+
+
+============================== 21:14:31.189419 | 9e470616-a5e1-4382-9728-81c52cae38fd ==============================
+[0m21:14:31.189419 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:14:31.191925 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt deps', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:14:31.193484 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:14:31.197346 [debug] [MainThread]: Command `dbt deps` failed at 21:14:31.197346 after 0.20 seconds
+[0m21:14:31.197346 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1283E6DE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A128B9B2F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A128B996D0>]}
+[0m21:14:31.197346 [debug] [MainThread]: Flushing usage events
+[0m21:15:08.793758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD28C5E930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD25C010D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD25C01760>]}
+
+
+============================== 21:15:08.798699 | a22b4af6-8681-41f3-96d2-467a5fe72024 ==============================
+[0m21:15:08.798699 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:15:08.798699 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt ', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:15:08.798699 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:15:08.809711 [debug] [MainThread]: Command `cli deps` failed at 21:15:08.809711 after 1.80 seconds
+[0m21:15:08.809711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD28C5E9C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD25C010D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD28560C20>]}
+[0m21:15:08.809711 [debug] [MainThread]: Flushing usage events
+[0m21:15:14.055883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002DD7CE91AF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002DD7E9BD250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002DD7F07EB40>]}
+
+
+============================== 21:15:14.067296 | d4cb4269-ee89-46a2-beb4-3a06b34303aa ==============================
+[0m21:15:14.067296 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:15:14.067296 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:15:14.070271 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:15:14.073784 [debug] [MainThread]: Command `cli deps` failed at 21:15:14.073784 after 0.33 seconds
+[0m21:15:14.073784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002DD7CE91AF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002DD7FACA6F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002DD7F437C80>]}
+[0m21:15:14.073784 [debug] [MainThread]: Flushing usage events
+[0m21:16:03.793386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B3BB0EEC30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B3BB0C57C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B3BB155E80>]}
+
+
+============================== 21:16:03.799396 | 19196557-53d3-4e40-84f7-4b4759de5cc8 ==============================
+[0m21:16:03.799396 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:16:03.799396 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:16:03.807931 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:16:03.807931 [debug] [MainThread]: Command `cli deps` failed at 21:16:03.807931 after 0.63 seconds
+[0m21:16:03.807931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B3BA96E990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B3BB0C57C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B3BB460A10>]}
+[0m21:16:03.807931 [debug] [MainThread]: Flushing usage events
+[0m21:16:07.830521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020136415910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020138BB6F60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020138677020>]}
+
+
+============================== 21:16:07.840765 | 9a8a183a-85ba-45ae-96bf-590f47592b80 ==============================
+[0m21:16:07.840765 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:16:07.842967 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:16:07.842967 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:16:07.842967 [debug] [MainThread]: Command `cli deps` failed at 21:16:07.842967 after 0.25 seconds
+[0m21:16:07.849937 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020138BB6F60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020139070BF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020139070A70>]}
+[0m21:16:07.851447 [debug] [MainThread]: Flushing usage events
+[0m21:59:34.051430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E42CF59160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E42CCEA780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E42CF05A00>]}
+
+
+============================== 21:59:34.055442 | 436844e6-fc63-4e39-a074-1eedb212751d ==============================
+[0m21:59:34.055442 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:59:34.063464 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:59:34.063464 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:59:34.068032 [debug] [MainThread]: Command `cli deps` failed at 21:59:34.068032 after 2.66 seconds
+[0m21:59:34.068032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E42CCEA780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E42D35C140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E42D35C0B0>]}
+[0m21:59:34.068032 [debug] [MainThread]: Flushing usage events
+[0m21:59:38.750596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F6571B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F8C69160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F51A0740>]}
+
+
+============================== 21:59:38.757377 | bbcb8770-a28f-4333-9b5a-e9c78979c455 ==============================
+[0m21:59:38.757377 [info ] [MainThread]: Running with dbt=1.8.7
+[0m21:59:38.760389 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:59:38.760389 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:59:38.766219 [debug] [MainThread]: Command `cli deps` failed at 21:59:38.760389 after 1.11 seconds
+[0m21:59:38.767715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F8E958B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F91AA900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F8B59760>]}
+[0m21:59:38.768769 [debug] [MainThread]: Flushing usage events
+[0m22:00:04.997641 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018C7F44EC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018C7F18E270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018C7C554830>]}
+
+
+============================== 22:00:05.004694 | 8743b9d5-c435-411b-9f0c-24a41766513b ==============================
+[0m22:00:05.004694 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:00:05.008511 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt ', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:05.009560 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:00:05.013072 [debug] [MainThread]: Command `cli deps` failed at 22:00:05.013072 after 2.27 seconds
+[0m22:00:05.014439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018C7E5F9FA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018C7ED53C80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018C7F79A900>]}
+[0m22:00:05.014439 [debug] [MainThread]: Flushing usage events
+[0m22:00:05.119383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024BC7AF8470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024BCA03D430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024BCA0838C0>]}
+
+
+============================== 22:00:05.125402 | 3046ace5-b83f-4266-a5b8-b5da57eeae51 ==============================
+[0m22:00:05.125402 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:00:05.131275 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:05.131275 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:00:05.135054 [debug] [MainThread]: Command `cli deps` failed at 22:00:05.135054 after 2.59 seconds
+[0m22:00:05.135054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024BCAB32870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024BCAB0AA20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024BCA082750>]}
+[0m22:00:05.138625 [debug] [MainThread]: Flushing usage events
+[0m22:00:05.157318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015CACB0B680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015CAFC11B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015CAFC124E0>]}
+
+
+============================== 22:00:05.164204 | 26a45b4b-e2d7-444f-8ea4-b42242923008 ==============================
+[0m22:00:05.164204 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:00:05.164204 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt ', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:05.170558 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:00:05.174571 [debug] [MainThread]: Command `cli deps` failed at 22:00:05.170558 after 3.20 seconds
+[0m22:00:05.174571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015CACB0B680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015CAF4B1010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015CAF4B0CE0>]}
+[0m22:00:05.174571 [debug] [MainThread]: Flushing usage events
+[0m22:00:05.241851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1F7E49EE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1F5711C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1F8429A30>]}
+
+
+============================== 22:00:05.247967 | 86e1ea7c-569e-4326-8560-1d8c54d1cbf1 ==============================
+[0m22:00:05.247967 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:00:05.247967 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:05.255969 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:00:05.255969 [debug] [MainThread]: Command `cli deps` failed at 22:00:05.255969 after 3.05 seconds
+[0m22:00:05.255969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1F7F59100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1F8ACA900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1F86567E0>]}
+[0m22:00:05.255969 [debug] [MainThread]: Flushing usage events
+[0m22:00:06.456521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C88EFE5A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C88F149B20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C89048DEE0>]}
+
+
+============================== 22:00:06.466684 | 4671a13e-ba32-451c-a09f-22441c01275b ==============================
+[0m22:00:06.466684 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:00:06.466684 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt ', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:06.466684 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:00:06.475702 [debug] [MainThread]: Command `cli deps` failed at 22:00:06.474694 after 1.60 seconds
+[0m22:00:06.476905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C88EFE5A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C891C2A900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C891C6ED20>]}
+[0m22:00:06.476905 [debug] [MainThread]: Flushing usage events
+[0m22:00:06.675380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D4D91E1A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D4DBE40140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D4DBE409B0>]}
+
+
+============================== 22:00:06.682813 | a35a1ac3-34ee-4a29-961b-20f0293ac2da ==============================
+[0m22:00:06.682813 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:00:06.682813 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt ', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:06.682813 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:00:06.693881 [debug] [MainThread]: Command `cli deps` failed at 22:00:06.693881 after 1.10 seconds
+[0m22:00:06.695388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D4D5491D00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D4DBE1A6C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D4DBE1A900>]}
+[0m22:00:06.697447 [debug] [MainThread]: Flushing usage events
+[0m22:00:07.705850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE7CD7EC30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE79D21AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE7CA4FB30>]}
+
+
+============================== 22:00:07.716936 | 9a3206f4-67ee-4b5f-8038-70d46afdea50 ==============================
+[0m22:00:07.716936 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:00:07.720678 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:07.722003 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:00:07.726501 [debug] [MainThread]: Command `cli deps` failed at 22:00:07.726501 after 0.33 seconds
+[0m22:00:07.728992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE7D0CBF20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE7CC65700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE7CC65E80>]}
+[0m22:00:07.730135 [debug] [MainThread]: Flushing usage events
+[0m22:00:07.818160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290BEF1BD40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290BEF1BC80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290BEF1BBF0>]}
+
+
+============================== 22:00:07.829327 | f3b41a87-7c2f-477e-b30b-cdb2c17993b2 ==============================
+[0m22:00:07.829327 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:00:07.831695 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:07.833805 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt_utils\integration_tests\dbt_packages\dbt_utils\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:00:07.836420 [debug] [MainThread]: Command `cli deps` failed at 22:00:07.836420 after 0.36 seconds
+[0m22:00:07.838499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290BEF1B3E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290BEF5EE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290BEF5EAB0>]}
+[0m22:00:07.838499 [debug] [MainThread]: Flushing usage events
+[0m22:01:39.670274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000197A9844BF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000197AA269F70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000197A9C2E180>]}
+
+
+============================== 22:01:39.679892 | 0689967f-1eb9-4ef4-8003-edd292b85fd3 ==============================
+[0m22:01:39.679892 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:01:39.679892 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:01:39.679892 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:01:39.687191 [debug] [MainThread]: Command `cli deps` failed at 22:01:39.687191 after 2.01 seconds
+[0m22:01:39.688244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000197AA1B1C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000197A3DD7830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000197AA65ACF0>]}
+[0m22:01:39.688244 [debug] [MainThread]: Flushing usage events
+[0m22:01:44.661227 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE36F07BF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE367C19A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE38E2A540>]}
+
+
+============================== 22:01:44.675192 | 16c9d085-e8a1-4c72-9c1e-10d1a6383cbd ==============================
+[0m22:01:44.675192 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:01:44.675192 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'True'}
+[0m22:01:44.679287 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path c:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\deltastore_transformation\dbt_packages\dbt-utils-1.3.0\integration_tests\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:01:44.682413 [debug] [MainThread]: Command `cli deps` failed at 22:01:44.682413 after 0.83 seconds
+[0m22:01:44.682413 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE3981E720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE39B906E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BE39704800>]}
+[0m22:01:44.684453 [debug] [MainThread]: Flushing usage events
+[0m22:13:08.538205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA6A0F5550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA6D027D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA6D027B30>]}
+
+
+============================== 22:13:08.539088 | 6265331b-6ad4-4dda-9159-b622adadb811 ==============================
+[0m22:13:08.539088 [info ] [MainThread]: Running with dbt=1.8.7
+[0m22:13:08.539088 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:13:08.546994 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:13:08.548654 [debug] [MainThread]: Command `dbt run` failed at 22:13:08.548654 after 0.17 seconds
+[0m22:13:08.548654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA6E1C23F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA6DE9F320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BA6D569700>]}
+[0m22:13:08.548654 [debug] [MainThread]: Flushing usage events
+[0m01:34:37.204274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216118D4410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021611233980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216118D4470>]}
+
+
+============================== 01:34:37.204274 | 630437d6-eb3f-48db-a124-3c2f3c599031 ==============================
+[0m01:34:37.204274 [info ] [MainThread]: Running with dbt=1.8.7
+[0m01:34:37.204274 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --target prod', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m01:34:37.204274 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m01:34:37.204274 [debug] [MainThread]: Command `dbt run` failed at 01:34:37.204274 after 0.17 seconds
+[0m01:34:37.204274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021611531DC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021611589970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002161137D190>]}
+[0m01:34:37.204274 [debug] [MainThread]: Flushing usage events
+[0m12:43:28.774147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028268B59D30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282684F5D30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282688D6FC0>]}
+
+
+============================== 12:43:28.779331 | 9b34de22-548c-432d-9ac2-98ef38bdd5bf ==============================
+[0m12:43:28.779331 [info ] [MainThread]: Running with dbt=1.8.7
+[0m12:43:28.782583 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:43:28.782583 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:43:28.786666 [debug] [MainThread]: Command `dbt run` failed at 12:43:28.786666 after 0.24 seconds
+[0m12:43:28.786666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028268EA41A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028268B268D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028268B24B30>]}
+[0m12:43:28.786666 [debug] [MainThread]: Flushing usage events
+[0m00:38:35.525768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D5A92DD30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D57A25160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D5A1F0740>]}
+
+
+============================== 00:38:35.530766 | eedcb84e-7bce-44ae-87f5-7fd944344485 ==============================
+[0m00:38:35.530766 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:38:35.531767 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Iheb\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:38:35.532768 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Iheb\Desktop\Cours\Projects\DeltaStore\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:38:35.537034 [debug] [MainThread]: Command `dbt run` failed at 00:38:35.536037 after 0.16 seconds
+[0m00:38:35.538036 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D5A9F1700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D5AA82990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D5A1D4530>]}
+[0m00:38:35.539035 [debug] [MainThread]: Flushing usage events
