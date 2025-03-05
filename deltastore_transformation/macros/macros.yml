@@ -1,0 +1,18 @@
+version: 2
+
+macros:
+  - name: check_duplicates
+    description: "Identifies duplicate values in a specified column of a given table."
+    arguments:
+      - name: table
+        description: "The name of the table to check for duplicates."
+      - name: column
+        description: "The column in which to check for duplicate values."
+
+  - name: drop_table_if_exists
+    description: "Drops a table if it exists in the specified schema."
+    arguments:
+      - name: schema
+        description: "The schema where the table is located."
+      - name: table
+        description: "The name of the table to be dropped if it exists."

@@ -17,6 +17,9 @@ sources:
             data_tests:
               - not_null
               - unique
+          - name: email
+            data_tests:
+              - not_null
 
       - name: shipments
         description: "this is the sshipments table"
@@ -48,6 +51,7 @@ sources:
           - name: order_date
             data_tests:
               - check_valid_dates
+            description: "This test checks if the order_date column is either > '2020-01-01' or < from current date"
           
       - name: products
         description: "This is the products table"

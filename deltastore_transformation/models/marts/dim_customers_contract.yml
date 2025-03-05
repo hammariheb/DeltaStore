@@ -1,5 +1,6 @@
 models:
   - name: dim_customers
+    description: "This file contains all the final informations about all the customers"
     config:
       materialized: table
       contract:
@@ -7,11 +8,13 @@ models:
     columns:
       - name: unified_customer_id
         data_type: varchar(50)
+        description: "Unique identifier for a customer across all stores."
         constraints:
           - type: not_null
       - name: address
         data_type: string
       - name: city 
+        description: "City where the customer resides."
         data_type: string
       - name: country_name
         data_type: string

@@ -1,0 +1,5 @@
+version: 2
+
+seeds:
+  - name: cities
+    description: "This is CSV file that has all the conventional records for cities and countries in the world along with their codes"
