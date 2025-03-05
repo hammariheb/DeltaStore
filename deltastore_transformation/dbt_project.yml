@@ -18,13 +18,9 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-vars:
-  'dbt_date:time_zone': 'Europe/Paris'
-
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
-
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -32,14 +28,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+
+vars: 
+  dbt_date_time_zone: 'Europe/Paris'  
+  source_store: 'old_store'
+  
 models:
-  deltastore_transformation:
-    # Config indicated by + and applies to all files under models/example/
+  deltastore_transformation: 
     staging:
-      +materialized: view
+        +materialized: view
 
     intermediate:
       +materialized: view
-      
+
     marts:
       +materialized: table
