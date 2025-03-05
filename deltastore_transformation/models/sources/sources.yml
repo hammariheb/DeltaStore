@@ -4,14 +4,14 @@ sources:
   - name: old_store
     schema: old_store
     freshness:
-      warn_after: {count: 1, period: day}
+      warn_after: {count: 10, period: day}
     loaded_at_field: updated_at
 
     tables:
       - name: customers
         description: "This is the customers table"
         freshness:
-          warn_after: {count: 1, period: day}
+          warn_after: {count: 10, period: day}
         columns:
           - name: customer_id
             data_tests:
@@ -117,7 +117,7 @@ sources:
       - name: products
         description: "This table contains information about products"
         freshness:
-          warn_after: {count: 1, period: day}
+          warn_after: {count: 10, period: day}
         columns: 
           - name: id
             data_tests:
