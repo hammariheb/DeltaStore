@@ -1,0 +1,20 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 15,
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": true,
+                "trustServerCertificate": true
+            },
+            "previewLimit": 50,
+            "server": "Batman\\SQLEXPRESS01",
+            "port": 60293,
+            "driver": "MSSQL",
+            "name": "Batman",
+            "username": "Iheb",
+            "password": "7422"
+        }
+    ]
+}

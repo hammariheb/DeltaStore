@@ -1,0 +1,114 @@
+version: 2
+
+models:
+  - name: stg_new_store_users
+    description: "Staging model for users from the new store. This model standardizes user data and formats addresses."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for the customer."
+      - name: first_name
+        description: "First name of the customer."
+      - name: last_name
+        description: "Last name of the customer."
+      - name: full_name
+        description: "Concatenation of first and last name."
+      - name: email
+        description: "Email address of the customer."
+      - name: city
+        description: "City where the customer resides."
+      - name: phone_number
+        description: "Contact phone number."
+      - name: address
+        description: "Formatted address combining street name and number, if available."
+      - name: source_store
+        description: "Indicates that the data originates from 'new store'."
+      - name: created_at
+        description: "Timestamp when the customer was created."
+      - name: updated_at
+        description: "Timestamp when the customer data was last updated."
+
+  - name: stg_old_store_products
+    description: "Staging model for products from the old store. This model standardizes product details and pricing."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product."
+      - name: product_name
+        description: "Name of the product."
+      - name: description
+        description: "Generated description of the product based on name and category."
+      - name: category
+        description: "Category of the product."
+      - name: price
+        description: "Standardized price rounded to two decimal places."
+      - name: supplier_id
+        description: "Identifier of the product supplier."
+      - name: rating_rate
+        description: "Placeholder column for future rating data (currently NULL)."
+      - name: source_store
+        description: "Indicates that the data originates from 'old store'."
+      - name: updated_at
+        description: "Timestamp when the product data was last updated."
+
+  - name: stg_old_store_suppliers
+    description: "Staging model for suppliers from the old store. This model standardizes supplier details."
+    columns:
+      - name: supplier_unique_id
+        description: "Surrogate key generated for each supplier."
+      - name: supplier_full_name
+        description: "Full name of the supplier contact."
+      - name: supplier_first_name
+        description: "First name extracted from the supplier contact name."
+      - name: supplier_last_name
+        description: "Last name extracted from the supplier contact name."
+      - name: phone_number
+        description: "Supplier's contact phone number."
+      - name: email
+        description: "Supplier's email address."
+      - name: address
+        description: "Supplier's address."
+      - name: source_store
+        description: "Indicates that the data originates from 'old store'."
+
+  - name: stg_old_store_orders
+    description: "Staging model for order items from the old store. This model standardizes order details."
+    columns:
+      - name: order_item_unique_id
+        description: "Surrogate key generated for each order item."
+      - name: order_id
+        description: "Identifier for the order associated with this item."
+      - name: product_id
+        description: "Identifier for the product purchased in this order item."
+      - name: quantity
+        description: "Quantity of the product purchased."
+      - name: price_at_purchase
+        description: "Price of the product at the time of purchase, rounded to two decimal places."
+      - name: source_store
+        description: "Indicates that the data originates from 'old store'."
+
+  - name: stg_old_store_payments
+    description: "Staging model for payments from the old store. This model standardizes payment transaction details."
+    columns:
+      - name: payment_unique_id
+        description: "Surrogate key generated for each payment."
+      - name: order_id
+        description: "Identifier for the order associated with this payment."
+      - name: payment_method
+        description: "Method used for payment (e.g., credit card, PayPal, etc.)."
+      - name: amount
+        description: "Total amount paid, rounded to two decimal places."
+      - name: transaction_status
+        description: "Current status of the payment transaction (e.g., completed, pending, failed)."
+      - name: source_store
+        description: "Indicates that the data originates from 'old store'."
+ 
+  - name: stg_cities_filtered
+    description: "Filtered staging model for cities. Extracts unique US state and country names."
+    columns:
+      - name: state_code
+        description: "State code abbreviation."
+        data_tests:
+          - not_null
+      - name: state_name
+        description: "Full name of the state."
+      - name: country_name
+        description: "Country name, only including 'United States'."
