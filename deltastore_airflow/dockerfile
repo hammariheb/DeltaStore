@@ -1,0 +1,33 @@
+FROM apache/airflow:2.9.0
+
+# Switch to root user for installing system dependencies
+USER root
+
+# Install required packages for SQL Server
+RUN apt-get update 
+RUN apt-get install -y git \
+    curl \
+    unixodbc \
+    unixodbc-dev \
+    odbcinst \
+    gnupg2 \
+    && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+    && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+    && apt-get update \
+    && ACCEPT_EULA=Y apt-get install -y msodbcsql17
+
+# Switch to airflow user before running pip
+USER airflow
+
+# Install Python dependencies as airflow user
+RUN pip install --no-cache-dir \
+    dbt-core==1.8.2 \
+    dbt-sqlserver \
+    apache-airflow-providers-microsoft-mssql \
+    apache-airflow-providers-odbc \
+    pyodbc \
+    airflow-provider-great-expectations
+
+# Initialize Airflow database (this should be done as the airflow user)
+USER airflow
+RUN airflow db upgrade

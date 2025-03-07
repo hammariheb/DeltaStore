@@ -1,0 +1,16 @@
+deltastore_dbt_transformation:
+  target: dev
+  outputs:
+    dev:
+      driver: ODBC Driver 17 for SQL Server
+      database: DeltaStore
+      schema: raw
+      server: host.docker.internal
+      password: '7422'
+      port: 60293
+      threads: 8
+      type: sqlserver
+      user: Iheb
+      trust_cert: True
+      login_timeout: 30    
+      query_timeout: 60   

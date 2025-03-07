@@ -1,0 +1,141 @@
+version: 2
+
+sources:
+  - name: old_store
+    schema: old_store
+    freshness:
+      warn_after: {count: 10, period: day}
+    loaded_at_field: updated_at
+
+    tables:
+      - name: customers
+        description: "This is the customers table"
+        freshness:
+          warn_after: {count: 10, period: day}
+        columns:
+          - name: customer_id
+            data_tests:
+              - not_null
+              - unique
+          - name: email
+            data_tests:
+              - not_null
+
+      - name: shipments
+        description: "this is the sshipments table"
+        feshness: null
+        columns:
+          - name: shipment_id
+            data_tests:
+              - not_null
+              - unique
+          - name: shipment_date
+            data_tests:
+              - check_valid_dates
+          - name: delivery_date
+            data_tests:
+              - check_valid_dates
+          - name: shipment_status
+            data_tests:
+              - accepted_values:
+                  values: ['Pending','Delivered','Shipped','Cancelled'] 
+        
+      - name: orders
+        description: "This is the orders table"
+        freshness: null
+        columns:
+          - name: order_id 
+            data_tests:
+              - not_null
+              - unique
+          - name: order_date
+            data_tests:
+              - check_valid_dates
+            description: "This test checks if the order_date column is either > '2020-01-01' or < from current date"
+          
+      - name: products
+        description: "This is the products table"
+        columns:
+          - name: product_id 
+            data_tests:
+              - not_null
+              - unique
+
+      - name: order_items
+        description: "This is the order_items table"
+        freshness: null
+        columns:
+          - name: order_item_id 
+            data_tests:
+              - not_null
+              - unique
+          - name: order_id
+            data_tests:
+              - relationships:
+                  to: source('old_store','orders')
+                  field: order_id
+          - name: product_id
+            data_tests:
+              - relationships:
+                  to: source('old_store','products')
+                  field: product_id
+          
+
+      - name: payment
+        description: "This is the payments table"
+        freshness: null
+        columns:
+          - name: payment_id
+            data_tests:
+              - not_null
+              - unique
+          - name: transaction_status
+            data_tests:
+              - accepted_values:
+                  values: ['Completed','Pending','Failed']
+           
+      - name: suppliers
+        description: "This is the suppliers table"
+        freshness: null
+        columns:
+          - name: supplier_id 
+            data_tests:
+              - not_null
+              - unique
+
+      - name: reviews
+        description: "This is the reviews table"
+        freshness: null
+        columns:
+          - name: review_id 
+            data_tests:
+              - not_null
+              - unique
+          - name: review_date
+            data_tests:
+            - check_valid_dates
+
+  - name: new_store
+    schema: new_store
+    tables:
+      - name: products
+        description: "This table contains information about products"
+        freshness:
+          warn_after: {count: 10, period: day}
+        columns: 
+          - name: id
+            data_tests:
+              - unique 
+              - not_null
+
+      - name: users
+        description: "This table contains information about users"
+        columns:
+          - name: id
+            data_tests:
+              - unique 
+              - not_null
+
+data-tests:
+   - name: assert_order_amount_is_positive
+     description: " this is a test to check if the total amounts of orders are positive"
