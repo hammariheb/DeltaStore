@@ -1,0 +1,34 @@
+models:
+  - name: dim_customers
+    description: "This file contains all the final informations about all the customers"
+    config:
+      materialized: table
+      contract:
+        enforced: true
+    columns:
+      - name: unified_customer_id
+        data_type: varchar(50)
+        description: "Unique identifier for a customer across all stores."
+        constraints:
+          - type: not_null
+      - name: address
+        data_type: string
+      - name: city 
+        description: "City where the customer resides."
+        data_type: string
+      - name: country_name
+        data_type: string
+      - name: created_at
+        data_type: datetime
+      - name: email
+        data_type: string
+      - name: first_name
+        data_type: string
+      - name: last_name
+        data_type: string
+      - name: phone_number
+        data_type: string
+      - name: source_store
+        data_type: string
+      - name: updated_at
+        data_type: datetime

@@ -1,0 +1,75 @@
+version: 2
+
+models:
+  - name: fct_order_customers
+    description: "Fact table containing orders placed by customers."
+    columns:
+      - name: order_id
+        description: "Unique identifier for the order."
+      - name: unified_customer_id
+        description: "Identifier linking orders to customers across stores."
+      - name: total_price
+        description: "Total price of the order."
+      - name: order_date
+        description: "Date when the order was placed."
+
+  - name: fct_order_items
+    description: "Fact table containing order item details."
+    columns:
+      - name: order_item_unique_id
+        description: "Unique identifier for an order item."
+      - name: order_id
+        description: "Foreign key referencing the order."
+      - name: unified_product_id
+        description: "Identifier linking products across stores."
+      - name: quantity
+        description: "Quantity of the product ordered."
+      - name: price_at_purchase
+        description: "Price of the product at the time of purchase."
+      - name: source_store
+        description: "The store where the order originated."
+
+  - name: fct_payments
+    description: "Fact table containing payment details for orders."
+    columns:
+      - name: payment_unique_id
+        description: "Unique identifier for the payment transaction."
+      - name: order_id
+        description: "Foreign key referencing the order."
+      - name: payment_method
+        description: "Method used for payment."
+      - name: amount
+        description: "Payment amount."
+      - name: transaction_status
+        description: "Status of the transaction."
+      - name: source_store
+        description: "The store where the payment was processed."
+
+  - name: fct_products
+    description: "Fact table containing product details."
+    columns:
+      - name: unified_product_id
+        description: "Unique identifier for a product across all stores."
+      - name: product_name
+        description: "Name of the product."
+      - name: description
+        description: "Detailed description of the product."
+      - name: category
+        description: "Product category."
+      - name: price
+        description: "Current price of the product."
+      - name: supplier_id
+        description: "Identifier for the product supplier."
+      - name: rating_rate
+        description: "Average rating of the product."
+      - name: source_store
+        description: "The store where the product information originated."
+      - name: updated_at
+        description: "Timestamp when the product information was last updated."
+
+  - name: fct_reviews
+    description: "Fact table containing customer reviews on products."
+   
+
+  - name: fct_shipments
+    description: "Fact table containing shipment details."
