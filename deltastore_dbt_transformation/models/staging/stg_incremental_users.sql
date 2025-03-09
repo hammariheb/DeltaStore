@@ -23,7 +23,7 @@ monthly_new_users as (
     )
     {% endif %}
     group by datetrunc(month, created_at)
-)
+) 
 
 select *
 from monthly_new_users
