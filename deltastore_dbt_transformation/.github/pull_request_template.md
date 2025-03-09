@@ -96,11 +96,3 @@ addressed, and remove any items that are not relevant to this PR.
 - [ ] I have added appropriate tests and documentation to any new models.
 
 - [ ] I have updated the README file.
-
-{%- if project.warehouse == 'redshift' %}
-
-- [ ] I have added sort and dist keys to models materialized as tables.
-
-- [ ] I have validated the SQL in any late-binding views.
-
-{% endif %}
