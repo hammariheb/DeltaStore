@@ -27,6 +27,7 @@ RUN pip install --no-cache-dir \
     apache-airflow-providers-odbc \
     pyodbc \
     airflow-provider-great-expectations
+RUN pip install --upgrade azure-batch azure-mgmt-datafactory azure-synapse-artifacts
 
 
 USER airflow
