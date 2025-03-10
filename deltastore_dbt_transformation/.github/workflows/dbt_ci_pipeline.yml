@@ -1,6 +1,5 @@
 name: dbt CI build pipeline
 
-
 on:
   push:
     branches:
@@ -24,21 +23,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
 
-
       - name: Set up environment variables
         env:
           DBT_HOST: ${{ secrets.DBT_HOST }}
           DBT_USER: ${{ secrets.DBT_USER }}
           DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
           DBT_DATABASE: ${{ secrets.DBT_DATABASE }}
+        run: |
+          echo "DBT_HOST=$DBT_HOST"
+          echo "DBT_USER=$DBT_USER"
+          echo "DBT_PASSWORD=$DBT_PASSWORD"
+          echo "DBT_DATABASE=$DBT_DATABASE"
 
-      - name: Check connexion
-        run: dbt debug
+      - name: Check dbt connection
+        run: dbt debug --profiles-dir $(pwd) 
 
-      - name: Install project dependencies
-        run: dbt deps
-
-     
-
+      - name: Install dbt project dependencies
+        run: dbt deps --profiles-dir $(pwd) 
       
-   
+      - name: Build all models
+        run: dbt build --profiles-dir $(pwd)  
