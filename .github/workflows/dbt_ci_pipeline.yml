@@ -4,8 +4,11 @@ on:
   pull_request:
     branches:
       - main  
-  workflow_dispatch:
-    
+    paths:
+      - 'deltastore_dbt_transformation/**'  # Run only when files change in this folder
+
+  workflow_dispatch:  # Allows manual trigger
+
 jobs:
   dbt_run:
     runs-on: ubuntu-latest 
@@ -13,7 +16,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2  
-      
+
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
         with:
@@ -58,10 +61,10 @@ jobs:
           EOL
           echo "Profiles file created at ~/.dbt/profiles.yml"
 
-      - name: Check dbt connection 
+      - name: Check dbt connection
         run: dbt debug 
 
-      - name: Install dbt project dependencies 
+      - name: Install dbt project dependencies
         run: dbt deps
       
       - name: Test all models
