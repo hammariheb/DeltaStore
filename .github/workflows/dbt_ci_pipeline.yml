@@ -5,7 +5,7 @@ on:
     branches:
       - main  
     paths:
-        - '/deltastore_dbt_transformations/**'  
+        - 'deltastore_dbt_transformations/**'  
   
   workflow_dispatch: 
 
