@@ -23,7 +23,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
-          pip install python-dotenv
+
 
       - name: Set up environment variables
         env:
@@ -31,14 +31,6 @@ jobs:
           DBT_USER: ${{ secrets.DBT_USER }}
           DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
           DBT_DATABASE: ${{ secrets.DBT_DATABASE }}
-          
-        run: |
-          echo "DBT_PROFILE_DIR=$(pwd)" >> $GITHUB_ENV
-          echo "DBT_TARGET=dev" >> $GITHUB_ENV
-          echo "DBT_USER=$DBT_USER" >> $GITHUB_ENV
-          echo "DBT_PASSWORD=$DBT_PASSWORD" >> $GITHUB_ENV
-          echo "DBT_HOST=$DBT_HOST" >> $GITHUB_ENV
-          echo "DBT_DATABASE=$DBT_DATABASE" >> $GITHUB_ENV
 
       - name: Check connexion
         run: dbt debug
