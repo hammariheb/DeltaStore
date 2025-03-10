@@ -5,7 +5,7 @@ on:
     branches:
       - main  
     paths:
-        - 'deltastore/deltastore_dbt_transformations/**'  
+        - '/deltastore_dbt_transformations/**'  
   
   workflow_dispatch: 
 
@@ -62,10 +62,10 @@ jobs:
           echo "Profiles file created at ~/.dbt/profiles.yml"
 
       - name: Check dbt connection
-        run: dbt debug --project-dir deltastore/deltastore_dbt_transformations
+        run: dbt debug --project-dir /deltastore_dbt_transformations
       
       - name: Install dbt project dependencies
-        run: dbt deps --project-dir deltastore/deltastore_dbt_transformations
+        run: dbt deps --project-dir /deltastore_dbt_transformations
       
       - name: Test all models
-        run: dbt test --project-dir deltastore/deltastore_dbt_transformations
+        run: dbt test --project-dir /deltastore_dbt_transformations
