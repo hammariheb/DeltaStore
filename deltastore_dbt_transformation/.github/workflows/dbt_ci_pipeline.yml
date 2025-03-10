@@ -1,10 +1,10 @@
-name: dbt CI build pipeline
+name: dbt CI test pipeline
 
 on:
   pull_request:
     branches:
       - main  
-
+      
 jobs:
   dbt_run:
     runs-on: ubuntu-latest 
@@ -57,10 +57,10 @@ jobs:
           EOL
           echo "Profiles file created at ~/.dbt/profiles.yml"
 
-      - name: Check dbt connection
+      - name: Check dbt connection 
         run: dbt debug 
 
-      - name: Install dbt project dependencies
+      - name: Install dbt project dependencies 
         run: dbt deps
       
       - name: Test all models
