@@ -1,48 +1,42 @@
-[2025-03-10T02:40:15.649+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
-[2025-03-10T02:40:15.753+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_build.source_freshness scheduled__2025-03-09T02:00:00+00:00 [queued]>
-[2025-03-10T02:40:15.787+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_build.source_freshness scheduled__2025-03-09T02:00:00+00:00 [queued]>
-[2025-03-10T02:40:15.791+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 4
-[2025-03-10T02:40:15.907+0000] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): source_freshness> on 2025-03-09 02:00:00+00:00
-[2025-03-10T02:40:15.918+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=109) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-03-10T14:16:57.786+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-03-10T14:16:57.886+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_build.source_freshness scheduled__2025-03-09T02:00:00+00:00 [queued]>
+[2025-03-10T14:16:57.920+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_build.source_freshness scheduled__2025-03-09T02:00:00+00:00 [queued]>
+[2025-03-10T14:16:57.921+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 4
+[2025-03-10T14:16:57.979+0000] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): source_freshness> on 2025-03-09 02:00:00+00:00
+[2025-03-10T14:16:57.984+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=169) is multi-threaded, use of fork() may lead to deadlocks in the child.
   pid = os.fork()
 
-[2025-03-10T02:40:15.930+0000] {standard_task_runner.py:63} INFO - Started process 110 to run task
-[2025-03-10T02:40:15.952+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_build', 'source_freshness', 'scheduled__2025-03-09T02:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dbt_built.py', '--cfg-path', '/tmp/tmp2pz6bctr']
-[2025-03-10T02:40:15.956+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask source_freshness
-[2025-03-10T02:40:16.265+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_build.source_freshness scheduled__2025-03-09T02:00:00+00:00 [running]> on host 8bd21c625e16
-[2025-03-10T02:40:16.761+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_build' AIRFLOW_CTX_TASK_ID='source_freshness' AIRFLOW_CTX_EXECUTION_DATE='2025-03-09T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-09T02:00:00+00:00'
-[2025-03-10T02:40:16.763+0000] {taskinstance.py:430} INFO - ::endgroup::
-[2025-03-10T02:40:16.970+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
-[2025-03-10T02:40:16.972+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt source freshness']
-[2025-03-10T02:40:16.982+0000] {subprocess.py:86} INFO - Output:
-[2025-03-10T02:40:23.834+0000] {subprocess.py:93} INFO - [0m02:40:23  Running with dbt=1.8.7
-[2025-03-10T02:40:24.578+0000] {subprocess.py:93} INFO - [0m02:40:24  Registered adapter: sqlserver=1.8.7
-[2025-03-10T02:40:25.220+0000] {subprocess.py:93} INFO - [0m02:40:25  Unable to do partial parsing because profile has changed
-[2025-03-10T02:40:34.717+0000] {subprocess.py:93} INFO - [0m02:40:34  Found 24 models, 3 snapshots, 31 data tests, 1 seed, 10 sources, 619 macros
-[2025-03-10T02:40:34.752+0000] {subprocess.py:93} INFO - [0m02:40:34
-[2025-03-10T02:41:38.374+0000] {subprocess.py:93} INFO - [0m02:41:38
-[2025-03-10T02:41:38.387+0000] {subprocess.py:93} INFO - [0m02:41:38  Finished running  in 0 hours 1 minutes and 3.60 seconds (63.60s).
-[2025-03-10T02:41:38.390+0000] {subprocess.py:93} INFO - [0m02:41:38  Encountered an error:
-[2025-03-10T02:41:38.394+0000] {subprocess.py:93} INFO - Database Error
-[2025-03-10T02:41:38.407+0000] {subprocess.py:93} INFO -   ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
-[2025-03-10T02:41:39.347+0000] {subprocess.py:97} INFO - Command exited with return code 2
-[2025-03-10T02:41:39.348+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
-[2025-03-10T02:41:39.366+0000] {taskinstance.py:2890} ERROR - Task failed with exception
-Traceback (most recent call last):
-  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
-    result = _execute_callable(context=context, **execute_callable_kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
-    return execute_callable(context=context, **execute_callable_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
-    raise AirflowException(
-airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
-[2025-03-10T02:41:39.381+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_build, task_id=source_freshness, execution_date=20250309T020000, start_date=20250310T024015, end_date=20250310T024139
-[2025-03-10T02:41:39.433+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task source_freshness (Bash command failed. The command returned a non-zero exit code 2.; 110)
-[2025-03-10T02:41:39.479+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
-[2025-03-10T02:41:39.606+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
-[2025-03-10T02:41:39.650+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-03-10T14:16:57.986+0000] {standard_task_runner.py:63} INFO - Started process 170 to run task
+[2025-03-10T14:16:57.988+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_build', 'source_freshness', 'scheduled__2025-03-09T02:00:00+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/dbt_build.py', '--cfg-path', '/tmp/tmpk307lesp']
+[2025-03-10T14:16:57.992+0000] {standard_task_runner.py:91} INFO - Job 36: Subtask source_freshness
+[2025-03-10T14:16:58.118+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_build.source_freshness scheduled__2025-03-09T02:00:00+00:00 [running]> on host cdd94f75476d
+[2025-03-10T14:16:58.447+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_build' AIRFLOW_CTX_TASK_ID='source_freshness' AIRFLOW_CTX_EXECUTION_DATE='2025-03-09T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-09T02:00:00+00:00'
+[2025-03-10T14:16:58.456+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-03-10T14:16:58.559+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-03-10T14:16:58.560+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/dbt && dbt source freshness']
+[2025-03-10T14:16:58.571+0000] {subprocess.py:86} INFO - Output:
+[2025-03-10T14:17:05.129+0000] {subprocess.py:93} INFO - [0m14:17:05  Running with dbt=1.8.7
+[2025-03-10T14:17:07.231+0000] {subprocess.py:93} INFO - [0m14:17:07  Registered adapter: sqlserver=1.8.7
+[2025-03-10T14:17:08.772+0000] {subprocess.py:93} INFO - [0m14:17:08  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2025-03-10T14:17:09.154+0000] {subprocess.py:93} INFO - [0m14:17:09  Unable to do partial parsing because profile has changed
+[2025-03-10T14:17:26.212+0000] {subprocess.py:93} INFO - [0m14:17:26  Found 24 models, 3 snapshots, 31 data tests, 1 seed, 10 sources, 619 macros
+[2025-03-10T14:17:26.235+0000] {subprocess.py:93} INFO - [0m14:17:26
+[2025-03-10T14:17:27.703+0000] {subprocess.py:93} INFO - [0m14:17:27  Concurrency: 8 threads (target='dev')
+[2025-03-10T14:17:27.724+0000] {subprocess.py:93} INFO - [0m14:17:27
+[2025-03-10T14:17:27.796+0000] {subprocess.py:93} INFO - [0m14:17:27  1 of 4 START freshness of new_store.products ................................... [RUN]
+[2025-03-10T14:17:27.808+0000] {subprocess.py:93} INFO - [0m14:17:27  2 of 4 START freshness of old_store.customers .................................. [RUN]
+[2025-03-10T14:17:27.822+0000] {subprocess.py:93} INFO - [0m14:17:27  3 of 4 START freshness of old_store.products ................................... [RUN]
+[2025-03-10T14:17:27.827+0000] {subprocess.py:93} INFO - [0m14:17:27  4 of 4 START freshness of old_store.shipments .................................. [RUN]
+[2025-03-10T14:17:28.444+0000] {subprocess.py:93} INFO - [0m14:17:28  1 of 4 PASS freshness of new_store.products .................................... [[32mPASS[0m in 0.62s]
+[2025-03-10T14:17:28.589+0000] {subprocess.py:93} INFO - [0m14:17:28  3 of 4 WARN freshness of old_store.products .................................... [[33mWARN[0m in 0.75s]
+[2025-03-10T14:17:28.662+0000] {subprocess.py:93} INFO - [0m14:17:28  4 of 4 PASS freshness of old_store.shipments ................................... [[32mPASS[0m in 0.80s]
+[2025-03-10T14:17:28.832+0000] {subprocess.py:93} INFO - [0m14:17:28  2 of 4 PASS freshness of old_store.customers ................................... [[32mPASS[0m in 1.00s]
+[2025-03-10T14:17:28.964+0000] {subprocess.py:93} INFO - [0m14:17:28
+[2025-03-10T14:17:28.989+0000] {subprocess.py:93} INFO - [0m14:17:28  Finished running 4 sources in 0 hours 0 minutes and 2.62 seconds (2.62s).
+[2025-03-10T14:17:29.547+0000] {subprocess.py:93} INFO - [0m14:17:29  Done.
+[2025-03-10T14:17:30.603+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-03-10T14:17:30.604+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-03-10T14:17:30.722+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=dbt_build, task_id=source_freshness, execution_date=20250309T020000, start_date=20250310T141657, end_date=20250310T141730
+[2025-03-10T14:17:30.829+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-03-10T14:17:30.866+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-10T14:17:30.897+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

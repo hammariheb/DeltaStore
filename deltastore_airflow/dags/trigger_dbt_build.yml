@@ -1,0 +1,25 @@
+name: Execute dbt Build on Merge to Main
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow when pushing to the 'main' branch
+
+jobs:
+  dbt_build:
+    runs-on: ubuntu-latest  # Use an Ubuntu runner
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Checkout your repository code
+
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2  # Set up Docker for the job
+
+    - name: Build Docker image
+      run: |
+        docker build -t dbt-container .  # Build the Docker image using the Dockerfile
+
+    - name: Run dbt build DAG
+      run: |
+        docker run --rm dbt-container  # Run the Docker container, which will execute your dbt_build.py script
