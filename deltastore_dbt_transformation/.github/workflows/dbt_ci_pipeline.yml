@@ -41,5 +41,5 @@ jobs:
       - name: Install dbt project dependencies
         run: dbt deps --profiles-dir $(pwd) 
       
-      - name: Build all models
-        run: dbt build --profiles-dir $(pwd)  
+      - name: test all models
+        run: dbt test --profiles-dir $(pwd)  
