@@ -1,7 +1,7 @@
 name: dbt CI build pipeline
 
 on:
-  push:
+  pull_request:
     branches:
       - main  
 
@@ -27,7 +27,7 @@ jobs:
         env:
           DBT_HOST: ${{ secrets.DBT_HOST }}
           DBT_USER: ${{ secrets.DBT_USER }}
-          DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+          DBT_PASSWORD: ${{ secrets.DBT_PASSWORD}}
           DBT_DATABASE: ${{ secrets.DBT_DATABASE }}
         run: |
           echo "DBT_HOST=$DBT_HOST"
