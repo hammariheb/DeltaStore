@@ -38,33 +38,6 @@ jobs:
       - name: Install project dependencies
         run: dbt deps
 
-      - name:
-        run: dbt build
-name: dbt CI/CD Pipeline
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  dbt_run:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Python 3.x
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install dbt-sqlserver==1.8.7
-   
      
 
       
