@@ -40,6 +40,9 @@ jobs:
           echo "DBT_USER=$DBT_USER"
           echo "DBT_DATABASE=$DBT_DATABASE"
 
+      - name: Change directory to the dbt project
+        run: cd deltastore_dbt_transformation
+
       - name: Create dbt profiles directory
         run: |
           mkdir -p ~/.dbt  # Create .dbt folder in the home directory
@@ -50,7 +53,7 @@ jobs:
               dev:
                 driver: ODBC Driver 17 for SQL Server
                 database: $DBT_DATABASE
-                schema: raw  # Make sure the schema exists in your database
+                schema: raw  # Change this to an existing schema if 'raw' is not valid
                 server: $DBT_HOST
                 user: $DBT_USER
                 password: $DBT_PASSWORD
@@ -62,7 +65,7 @@ jobs:
               prod:
                 driver: ODBC Driver 17 for SQL Server
                 database: DeltaStore
-                schema: analytics  # Ensure the prod schema exists in the database
+                schema: analytics
                 server: Batman\SQLEXPRESS01
                 password: '7422'
                 port: 60293
@@ -72,6 +75,9 @@ jobs:
                 trust_cert: True
           EOL
           echo "Profiles file created at ~/.dbt/profiles.yml"
+
+      - name: Display the content of profiles.yml
+        run: cat ~/.dbt/profiles.yml
 
       - name: Check dbt connection
         run: dbt debug  # Verify if dbt can connect successfully to the database
