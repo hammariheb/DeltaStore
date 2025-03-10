@@ -11,7 +11,7 @@ default_args = {
 with DAG(
     "dbt_build",
     default_args=default_args,
-    schedule_interval="0 23 * * *",
+    schedule_interval="0 2 * * *",
     catchup=False,
 ) as dag:
 

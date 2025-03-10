@@ -12,7 +12,8 @@ deltastore_dbt_transformation:
       type: sqlserver
       user: Iheb
       trust_cert: True
-    
+      connection_timeout: 60  
+
     prod:
       driver: ODBC Driver 17 for SQL Server
       database: DeltaStore
@@ -24,3 +25,4 @@ deltastore_dbt_transformation:
       type: sqlserver
       user: Iheb
       trust_cert: True
+      connection_timeout: 60 

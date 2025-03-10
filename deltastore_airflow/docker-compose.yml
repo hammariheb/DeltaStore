@@ -78,7 +78,7 @@ x-airflow-common:
     - ./plugins:/opt/airflow/plugins
     - ./deltastore_dbt_transformation/profiles.yml:/opt/airflow/.dbt/
     - ./deltastore_dbt_transformation:/opt/dbt
-   # - ./config/airflow.cfg:/opt/airflow/config/airflow.cfg
+    - ./config/airflow.cfg:/opt/airflow/config/airflow.cfg
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
