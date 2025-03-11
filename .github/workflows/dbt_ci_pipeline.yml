@@ -64,6 +64,7 @@ jobs:
                   password: '$DBT_PASSWORD'
                   database: '$DBT_DATABASE'
                   schema: 'raw'
+                  port: 60293
                   trust_cert: true
             EOF
   
