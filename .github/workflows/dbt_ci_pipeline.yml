@@ -48,6 +48,12 @@ jobs:
             echo "DBT_HOST=$DBT_HOST"
             echo "DBT_USER=$DBT_USER"
             echo "DBT_DATABASE=$DBT_DATABASE"
+            
+      - name: Check if server is reachable
+        run: |
+          echo "Checking if server $DBT_HOST is reachable on port 60293"
+          nc -zv $DBT_HOST 60293 || echo "Server is not reachable. Please check the IP address or firewall settings."
+
 
       - name: Create profiles.yml
         run: |
