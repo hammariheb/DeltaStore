@@ -29,10 +29,10 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          echo "DBT_HOST=${{ secrets.DBT_HOST }}" >> $GITHUB_ENV
-          echo "DBT_USER=${{ secrets.DBT_USER }}" >> $GITHUB_ENV
-          echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
-          echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
+          echo "DBT_HOST=Batman\SQLEXPRESS01" >> $GITHUB_ENV
+          echo "DBT_USER=Iheb" >> $GITHUB_ENV
+          echo "DBT_PASSWORD='7422'" >> $GITHUB_ENV
+          echo "DBT_DATABASE=DeltaStore" >> $GITHUB_ENV
 
       - name: Verify environment variables
         run: |
@@ -48,13 +48,15 @@ jobs:
             target: dev
             outputs:
               dev:
-                type: sqlserver
                 driver: "ODBC Driver 17 for SQL Server"
-                server: "${DBT_HOST}"
-                user: "${DBT_USER}"
-                password: "${DBT_PASSWORD}"
-                database: "${DBT_DATABASE}"
-                schema: "dbo"
+                database: "DeltaStore"
+                schema: "raw"
+                server: "Batman\\SQLEXPRESS01"
+                password: "7422"
+                port: 60293
+                threads: 8
+                type: sqlserver
+                user: "Iheb"
                 trust_cert: true
           EOF
 
