@@ -48,7 +48,7 @@ jobs:
             echo "DBT_HOST=$DBT_HOST"
             echo "DBT_USER=$DBT_USER"
             echo "DBT_DATABASE=$DBT_DATABASE"
-  
+
       - name: Create profiles.yml
         run: |
             mkdir -p ~/.dbt
@@ -68,21 +68,26 @@ jobs:
                   port: 60293
                   threads: 8
             EOF
-  
 
       - name: Verify profiles.yml creation
         run: cat ~/.dbt/profiles.yml
 
+      - name: Check server connectivity
+        run: |
+          # Try to reach the server IP on port 60293
+          echo "Checking server $DBT_HOST on port 60293"
+          nc -zv $DBT_HOST 60293 || echo "Server is not reachable. Please check the server IP or firewall settings."
+
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
-          dbt debug 
+          dbt debug
 
       - name: Install dbt project dependencies
         run: |
           cd deltastore_dbt_transformation
           dbt deps 
-      
+
       - name: Test all models
         run: |
           cd deltastore_dbt_transformation
