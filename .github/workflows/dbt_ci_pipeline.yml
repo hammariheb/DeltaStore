@@ -27,7 +27,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
 
-
       - name: Set up environment variables
         run: |
           echo "DBT_HOST=${{ secrets.DBT_HOST }}" >> $GITHUB_ENV
@@ -75,4 +74,4 @@ jobs:
       - name: Test all models
         run: |
           cd deltastore_dbt_transformation
-          dbt test 
+          dbt test
