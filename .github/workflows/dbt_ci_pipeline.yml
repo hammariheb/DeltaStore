@@ -49,11 +49,10 @@ jobs:
             echo "DBT_USER=$DBT_USER"
             echo "DBT_DATABASE=$DBT_DATABASE"
             
-      - name: Check if server is reachable
+      - name: Verify SQL Server Connection
         run: |
-          echo "Checking if server $DBT_HOST is reachable on port 60293"
-          nc -zv $DBT_HOST 60293 || echo "Server is not reachable. Please check the IP address or firewall settings."
-
+          sudo apt-get install -y freetds-bin
+          tsql -H $DBT_HOST -p 60293 -U $DBT_USER -P $DBT_PASSWORD
 
       - name: Create profiles.yml
         run: |
