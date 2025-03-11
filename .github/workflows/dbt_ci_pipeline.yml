@@ -43,18 +43,17 @@ jobs:
             deltastore_dbt_transformation:
               target: dev
               outputs:
-                dev:
-                  dev:
-                    type: sqlserver
-                    driver: ODBC Driver 17 for SQL Server
-                    database: DeltaStore
-                    schema: raw
-                    server: Batman\SQLEXPRESS01
-                    password: '7422'
-                    port: 60293
-                    threads: 8
-                    user: Iheb
-                    trust_cert: True
+                dev: 
+                  driver: ODBC Driver 17 for SQL Server
+                  database: DeltaStore
+                  schema: raw
+                  server: Batman\SQLEXPRESS01
+                  password: '7422'
+                  port: 60293
+                  threads: 8
+                  user: Iheb
+                  type: sqlserver
+                  trust_cert: True
             EOF
   
 
