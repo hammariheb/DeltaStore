@@ -59,7 +59,7 @@ jobs:
                 dev:
                   driver: ODBC Driver 17 for SQL Server
                   server: '$DBT_HOST'
-                  user: "$DBT_USER"
+                  user: '$DBT_USER'
                   password: '$DBT_PASSWORD'
                   database: '$DBT_DATABASE'
                   schema: raw
@@ -67,6 +67,7 @@ jobs:
                   type: sqlserver
                   port: 60293
                   threads: 8
+                  login_timeout: 60 
             EOF
   
 
