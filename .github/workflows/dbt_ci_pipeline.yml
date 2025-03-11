@@ -36,25 +36,37 @@ jobs:
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
 
+          - name: Set up environment variables
+          run: |
+            echo "DBT_HOST=${{ secrets.DBT_HOST }}" >> $GITHUB_ENV
+            echo "DBT_USER=${{ secrets.DBT_USER }}" >> $GITHUB_ENV
+            echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
+            echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
+  
+      - name: Verify environment variables
+        run: |
+            echo "DBT_HOST=$DBT_HOST"
+            echo "DBT_USER=$DBT_USER"
+            echo "DBT_DATABASE=$DBT_DATABASE"
+  
       - name: Create profiles.yml
         run: |
-          mkdir -p ~/.dbt
-          cat <<EOF > ~/.dbt/profiles.yml
-          deltastore_dbt_transformation:
-            target: dev
-            outputs:
-              dev:
-                driver: "ODBC Driver 17 for SQL Server"
-                database: "DeltaStore"
-                schema: "raw"
-                server: "BATMAN\\SQLEXPRESS01"  # Remplace par ton serveur SQL
-                password: "7422"  # Ton mot de passe
-                port: 60293  # Remplace par le port utilisé pour la connexion
-                threads: 8
-                type: sqlserver
-                user: "Iheb"  # Ton utilisateur SQL
-                trust_cert: true
-          EOF
+            mkdir -p ~/.dbt
+            cat <<EOF > ~/.dbt/profiles.yml
+            deltastore_dbt_transformation:
+              target: dev
+              outputs:
+                dev:
+                  type: sqlserver
+                  driver: "ODBC Driver 17 for SQL Server"
+                  server: "$DBT_HOST"
+                  user: "$DBT_USER"
+                  password: "$DBT_PASSWORD"
+                  database: "$DBT_DATABASE"
+                  schema: "dbo"
+                  trust_cert: true
+            EOF
+  
 
       - name: Verify profiles.yml creation
         run: cat ~/.dbt/profiles.yml
