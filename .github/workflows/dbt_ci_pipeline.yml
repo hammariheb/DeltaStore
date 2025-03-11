@@ -6,8 +6,7 @@ on:
       - main  
     paths:
         - 'deltastore_dbt_transformation/**'  
-  
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   dbt_run:
@@ -21,6 +20,16 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.12' 
+
+      - name: Install SQL Server ODBC driver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unixodbc-dev
+          sudo apt-get install -y gnupg2 curl
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+          sudo apt-get update
+          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
 
       - name: Install dependencies
         run: |
@@ -38,12 +47,12 @@ jobs:
                 driver: "ODBC Driver 17 for SQL Server"
                 database: "DeltaStore"
                 schema: "raw"
-                server: "Batman\\SQLEXPRESS01"
-                password: "7422"
-                port: 60293
+                server: "BATMAN\SQLEXPRESS01"  # Remplace par ton serveur SQL
+                password: "7422"  # Ton mot de passe
+                port: 60293  # Remplace par le port utilisé pour la connexion
                 threads: 8
                 type: sqlserver
-                user: "Iheb"
+                user: "Iheb"  # Ton utilisateur SQL
                 trust_cert: true
           EOF
 
@@ -56,8 +65,8 @@ jobs:
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
-          dbt debug
-      
+          dbt debug  # Cette commande vérifiera la connexion à la base de données
+
       - name: Install dbt project dependencies
         run: |
           cd deltastore_dbt_transformation
