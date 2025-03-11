@@ -72,11 +72,12 @@ jobs:
 
       - name: Verify profiles.yml creation
         run: cat ~/.dbt/profiles.yml
-        
-      - name: Verify SQL Server Connection
+
+      - name: check connexion
         run: |
-          sudo apt-get install -y freetds-bin
-          tsql -H $DBT_HOST -p 60293 -U $DBT_USER -P $DBT_PASSWORD
+         echo "Checking if SQL Server is reachable..."
+         nc -zv 192.168.1.37 60293
+
           
       - name: Check dbt connection
         run: |
