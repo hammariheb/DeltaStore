@@ -47,7 +47,7 @@ jobs:
                 driver: "ODBC Driver 17 for SQL Server"
                 database: "DeltaStore"
                 schema: "raw"
-                server: "BATMAN\SQLEXPRESS01"  # Remplace par ton serveur SQL
+                server: "BATMAN\\SQLEXPRESS01"  # Remplace par ton serveur SQL
                 password: "7422"  # Ton mot de passe
                 port: 60293  # Remplace par le port utilisé pour la connexion
                 threads: 8
