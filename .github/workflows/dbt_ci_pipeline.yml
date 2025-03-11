@@ -72,11 +72,11 @@ jobs:
       - name: Verify profiles.yml creation
         run: cat ~/.dbt/profiles.yml
 
-      - name: Check server connectivity
+      - name: Check DNS resolution
         run: |
-          # Try to reach the server IP on port 60293
-          echo "Checking server $DBT_HOST on port 60293"
-          nc -zv $DBT_HOST 60293 || echo "Server is not reachable. Please check the server IP or firewall settings."
+           echo "Checking DNS resolution for $DBT_HOST"
+           dig +short $DBT_HOST || echo "DNS resolution failed. Please check the hostname."
+
 
       - name: Check dbt connection
         run: |
