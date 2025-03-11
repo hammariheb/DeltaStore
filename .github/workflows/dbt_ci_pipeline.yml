@@ -50,10 +50,10 @@ jobs:
               dev:
                 type: sqlserver
                 driver: "ODBC Driver 17 for SQL Server"
-                server: "$DBT_HOST"
-                user: "$DBT_USER"
-                password: "$DBT_PASSWORD"
-                database: "$DBT_DATABASE"
+                server: "${DBT_HOST}"
+                user: "${DBT_USER}"
+                password: "${DBT_PASSWORD}"
+                database: "${DBT_DATABASE}"
                 schema: "dbo"
                 trust_cert: true
           EOF
