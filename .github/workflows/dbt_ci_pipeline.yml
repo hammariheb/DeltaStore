@@ -27,6 +27,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
 
+      - name: Install ODBC Driver for SQL Server
+        run: |
+          sudo su
+          curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+          apt-get update
+          ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev
+
       - name: Set up environment variables
         run: |
           echo "DBT_HOST=${{ secrets.DBT_HOST }}" >> $GITHUB_ENV
@@ -34,26 +42,11 @@ jobs:
           echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
           echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
 
-      - name: Create .dbt directory and profiles.yml
+      - name: Verify environment variables
         run: |
-          mkdir -p ~/.dbt
-          echo "deltastore_dbt_transformation:" > ~/.dbt/profiles.yml
-          echo "  target: dev" >> ~/.dbt/profiles.yml
-          echo "  outputs:" >> ~/.dbt/profiles.yml
-          echo "    dev:" >> ~/.dbt/profiles.yml
-          echo "      driver: ODBC Driver 17 for SQL Server" >> ~/.dbt/profiles.yml
-          echo "      database: $DBT_DATABASE" >> ~/.dbt/profiles.yml
-          echo "      schema: raw" >> ~/.dbt/profiles.yml
-          echo "      server: $DBT_HOST" >> ~/.dbt/profiles.yml
-          echo "      user: $DBT_USER" >> ~/.dbt/profiles.yml
-          echo "      password: $DBT_PASSWORD" >> ~/.dbt/profiles.yml
-          echo "      port: 60293" >> ~/.dbt/profiles.yml
-          echo "      threads: 8" >> ~/.dbt/profiles.yml
-          echo "      type: sqlserver" >> ~/.dbt/profiles.yml
-          echo "      trust_cert: True" >> ~/.dbt/profiles.yml
-
-      - name: Verify profiles.yml
-        run: cat ~/.dbt/profiles.yml
+          echo "DBT_HOST=$DBT_HOST"
+          echo "DBT_USER=$DBT_USER"
+          echo "DBT_DATABASE=$DBT_DATABASE"
 
       - name: Change directory to dbt project
         run: cd deltastore_dbt_transformation && pwd
