@@ -36,8 +36,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
 
-          - name: Set up environment variables
-          run: |
+      - name: Set up environment variables
+        run: |
             echo "DBT_HOST=${{ secrets.DBT_HOST }}" >> $GITHUB_ENV
             echo "DBT_USER=${{ secrets.DBT_USER }}" >> $GITHUB_ENV
             echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
