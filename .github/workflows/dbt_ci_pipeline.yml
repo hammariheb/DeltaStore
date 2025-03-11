@@ -34,11 +34,26 @@ jobs:
           echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
           echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
 
-      - name: Verify environment variables
+      - name: Create .dbt directory and profiles.yml
         run: |
-          echo "DBT_HOST=$DBT_HOST"
-          echo "DBT_USER=$DBT_USER"
-          echo "DBT_DATABASE=$DBT_DATABASE"
+          mkdir -p ~/.dbt
+          echo "deltastore_dbt_transformation:" > ~/.dbt/profiles.yml
+          echo "  target: dev" >> ~/.dbt/profiles.yml
+          echo "  outputs:" >> ~/.dbt/profiles.yml
+          echo "    dev:" >> ~/.dbt/profiles.yml
+          echo "      driver: ODBC Driver 17 for SQL Server" >> ~/.dbt/profiles.yml
+          echo "      database: $DBT_DATABASE" >> ~/.dbt/profiles.yml
+          echo "      schema: raw" >> ~/.dbt/profiles.yml
+          echo "      server: $DBT_HOST" >> ~/.dbt/profiles.yml
+          echo "      user: $DBT_USER" >> ~/.dbt/profiles.yml
+          echo "      password: $DBT_PASSWORD" >> ~/.dbt/profiles.yml
+          echo "      port: 60293" >> ~/.dbt/profiles.yml
+          echo "      threads: 8" >> ~/.dbt/profiles.yml
+          echo "      type: sqlserver" >> ~/.dbt/profiles.yml
+          echo "      trust_cert: True" >> ~/.dbt/profiles.yml
+
+      - name: Verify profiles.yml
+        run: cat ~/.dbt/profiles.yml
 
       - name: Change directory to dbt project
         run: cd deltastore_dbt_transformation && pwd
