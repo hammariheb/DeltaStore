@@ -58,12 +58,12 @@ jobs:
               outputs:
                 dev:
                   type: sqlserver
-                  driver: "ODBC Driver 17 for SQL Server"
+                  driver: 'ODBC Driver 17 for SQL Server'
                   server: '$DBT_HOST'
-                  user: "$DBT_USER"
-                  password: "$DBT_PASSWORD"
-                  database: "$DBT_DATABASE"
-                  schema: "raw"
+                  user: '$DBT_USER'
+                  password: '$DBT_PASSWORD'
+                  database: '$DBT_DATABASE'
+                  schema: 'raw'
                   trust_cert: true
             EOF
   
