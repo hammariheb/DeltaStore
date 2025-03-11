@@ -27,25 +27,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
 
-      - name: Create profiles.yml
+      - name: Set up environment variables
         run: |
-          mkdir -p ~/.dbt
-          cat <<EOF > ~/.dbt/profiles.yml
-          deltastore_dbt_transformation:
-            target: dev
-            outputs:
-              dev:
-                driver: "ODBC Driver 17 for SQL Server"
-                database: "DeltaStore"
-                schema: "raw"
-                server: "Batman\\SQLEXPRESS01"
-                password: "7422"
-                port: 60293
-                threads: 8
-                type: sqlserver
-                user: "Iheb"
-                trust_cert: true
-          EOF
+          echo "DBT_HOST=${{ secrets.DBT_HOST }}" >> $GITHUB_ENV
+          echo "DBT_USER=${{ secrets.DBT_USER }}" >> $GITHUB_ENV
+          echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
+          echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
+
+      - name: Verify environment variables
+        run: |
+          echo "DBT_HOST=$DBT_HOST"
+          echo "DBT_USER=$DBT_USER"
+          echo "DBT_DATABASE=$DBT_DATABASE"
+
+      - name: Change directory to dbt project
+        run: cd deltastore_dbt_transformation && pwd
 
       - name: Check dbt connection
         run: |
@@ -60,4 +56,4 @@ jobs:
       - name: Test all models
         run: |
           cd deltastore_dbt_transformation
-          dbt test
+          dbt test 
