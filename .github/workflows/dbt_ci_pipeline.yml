@@ -57,16 +57,16 @@ jobs:
               target: dev
               outputs:
                 dev:
+                  type: sqlserver
                   driver: ODBC Driver 17 for SQL Server
-                  database: DeltaStore
+                  server: '$DBT_HOST'
+                  user: '$DBT_USER'
+                  password: '$DBT_PASSWORD'
+                  database: '$DBT_DATABASE'
                   schema: raw
-                  server: Batman\SQLEXPRESS01
-                  password: '7422'
                   port: 60293
                   threads: 8
-                  type: sqlserver
-                  user: Iheb
-                  trust_cert: True
+                  trust_cert: true
             EOF
   
 
