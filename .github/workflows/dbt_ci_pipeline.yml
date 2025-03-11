@@ -60,9 +60,6 @@ jobs:
       - name: Verify profiles.yml creation
         run: cat ~/.dbt/profiles.yml
 
-      - name: Change directory to dbt project
-        run: cd deltastore_dbt_transformation && pwd
-
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
