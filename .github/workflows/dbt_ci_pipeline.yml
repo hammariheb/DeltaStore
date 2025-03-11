@@ -60,9 +60,6 @@ jobs:
                 trust_cert: true
           EOF
 
-      - name: Change directory to dbt project
-        run: cd deltastore_dbt_transformation && pwd
-
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
