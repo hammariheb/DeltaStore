@@ -47,7 +47,7 @@ jobs:
                   driver: ODBC Driver 17 for SQL Server
                   database: DeltaStore
                   schema: raw
-                  server: Batman\SQLEXPRESS01
+                  server: 2620:119:35::35
                   password: '7422'
                   port: 60293
                   threads: 8
