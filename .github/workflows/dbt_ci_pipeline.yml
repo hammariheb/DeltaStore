@@ -48,12 +48,7 @@ jobs:
             echo "DBT_HOST=$DBT_HOST"
             echo "DBT_USER=$DBT_USER"
             echo "DBT_DATABASE=$DBT_DATABASE"
-            
-      - name: Verify SQL Server Connection
-        run: |
-          sudo apt-get install -y freetds-bin
-          tsql -H $DBT_HOST -p 60293 -U $DBT_USER -P $DBT_PASSWORD
-
+  
       - name: Create profiles.yml
         run: |
             mkdir -p ~/.dbt
@@ -73,26 +68,26 @@ jobs:
                   port: 60293
                   threads: 8
             EOF
+  
 
       - name: Verify profiles.yml creation
         run: cat ~/.dbt/profiles.yml
-
-      - name: Check DNS resolution
+        
+      - name: Verify SQL Server Connection
         run: |
-           echo "Checking DNS resolution for $DBT_HOST"
-           dig +short $DBT_HOST || echo "DNS resolution failed. Please check the hostname."
-
-
+          sudo apt-get install -y freetds-bin
+          tsql -H $DBT_HOST -p 60293 -U $DBT_USER -P $DBT_PASSWORD
+          
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
-          dbt debug
+          dbt debug 
 
       - name: Install dbt project dependencies
         run: |
           cd deltastore_dbt_transformation
           dbt deps 
-
+      
       - name: Test all models
         run: |
           cd deltastore_dbt_transformation
