@@ -5,8 +5,8 @@ on:
     branches:
       - main  
     paths:
-        - 'deltastore_dbt_transformation/**'  
-  
+      - 'deltastore_dbt_transformation/**'  
+
   workflow_dispatch: 
 
 jobs:
@@ -20,13 +20,12 @@ jobs:
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12' 
+          python-version: '3.12'  # Ensure correct Python version is used
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install dbt-sqlserver==1.8.7
-
+          pip install dbt-sqlserver==1.8.7  # Install the specific dbt adapter for SQL Server
 
       - name: Set up environment variables
         run: |
@@ -41,38 +40,45 @@ jobs:
           echo "DBT_USER=$DBT_USER"
           echo "DBT_DATABASE=$DBT_DATABASE"
 
-      - name: Create profiles.yml in deltastore_transformation
+      - name: Change directory to the dbt project
+        run: cd deltastore_dbt_transformation
+
+      - name: Create dbt profiles directory
         run: |
-          mkdir -p deltastore_transformation
-          cat <<EOF > deltastore_transformation/profiles.yml
+          mkdir -p ~/.dbt  # Create .dbt folder in the home directory
+          cat > ~/.dbt/profiles.yml <<EOL
           deltastore_dbt_transformation:
             target: dev
             outputs:
               dev:
+                driver: ODBC Driver 17 for SQL Server
+                database: $DBT_DATABASE
+                schema: raw  # Change this to an existing schema if 'raw' is not valid
+                server: $DBT_HOST
+                user: $DBT_USER
+                password: $DBT_PASSWORD
+                port: 60293
+                threads: 8
                 type: sqlserver
-                driver: "ODBC Driver 17 for SQL Server"
-                server: "$DBT_HOST"
-                user: "$DBT_USER"
-                password: "$DBT_PASSWORD"
-                database: "$DBT_DATABASE"
-                schema: "dbo"
-                trust_cert: true
-          EOF
+                trust_cert: True
 
-      - name: Change directory to dbt project
-        run: cd deltastore_dbt_transformation && pwd
+          EOL
+          echo "Profiles file created at ~/.dbt/profiles.yml"
+
+      - name: Display the content of profiles.yml
+        run: cat ~/.dbt/profiles.yml
 
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
-          DBT_PROFILES_DIR=../deltastore_transformation dbt debug
+          dbt debug
       
       - name: Install dbt project dependencies
         run: |
           cd deltastore_dbt_transformation
-          DBT_PROFILES_DIR=../deltastore_transformation dbt deps 
+          dbt deps 
       
       - name: Test all models
         run: |
           cd deltastore_dbt_transformation
-          DBT_PROFILES_DIR=../deltastore_transformation dbt test 
+          dbt test 
