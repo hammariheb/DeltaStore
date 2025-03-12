@@ -5,22 +5,25 @@ on:
     branches:
       - main  
     paths:
-        - 'deltastore_dbt_transformation/**'  
+      - 'deltastore_dbt_transformation/**'  
   workflow_dispatch:
 
 jobs:
   dbt_run:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     
     steps:
+      # Checkout code from GitHub repository
       - name: Checkout code
         uses: actions/checkout@v2  
 
+      # Set up Python 3.x
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
         with:
           python-version: '3.12' 
 
+      # Install SQL Server ODBC driver
       - name: Install SQL Server ODBC driver
         run: |
           sudo apt-get update
@@ -31,29 +34,33 @@ jobs:
           sudo apt-get update
           sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
 
-      - name: check sql server
+      # Verify that the SQL Server ODBC driver is installed correctly
+      - name: Check SQL Server ODBC driver
         run: |
           odbcinst -q -d -n "ODBC Driver 17 for SQL Server"
 
-
-      - name: Install dependencies
+      # Install DBT dependencies
+      - name: Install DBT dependencies
         run: |
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
 
+      # Set up environment variables (using GitHub Secrets for credentials)
       - name: Set up environment variables
         run: |
             echo "DBT_HOST=${{ secrets.DBT_HOST }}" >> $GITHUB_ENV
             echo "DBT_USER=${{ secrets.DBT_USER }}" >> $GITHUB_ENV
             echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
             echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
-  
+
+      # Verify the environment variables are set correctly
       - name: Verify environment variables
         run: |
             echo "DBT_HOST=$DBT_HOST"
             echo "DBT_USER=$DBT_USER"
             echo "DBT_DATABASE=$DBT_DATABASE"
-  
+
+      # Create profiles.yml dynamically for DBT connection
       - name: Create profiles.yml
         run: |
             mkdir -p ~/.dbt
@@ -70,26 +77,28 @@ jobs:
                   schema: raw
                   trust_cert: true
                   type: sqlserver
-                  port: 60293
+                  port: 1433  # Use the correct port for your SQL Server
                   threads: 8
                   login_timeout: 120
             EOF
-  
 
+      # Verify profiles.yml creation
       - name: Verify profiles.yml creation
         run: cat ~/.dbt/profiles.yml
-        
-          
+
+      # Check DBT connection (use dbt debug to verify the setup)
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
-          dbt debug --verbose
+          dbt debug --connection
 
+      # Install DBT project dependencies (like dbt packages)
       - name: Install dbt project dependencies
         run: |
           cd deltastore_dbt_transformation
           dbt deps 
-      
+
+      # Test all models in the DBT project
       - name: Test all models
         run: |
           cd deltastore_dbt_transformation
