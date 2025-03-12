@@ -72,7 +72,7 @@ jobs:
                   type: sqlserver
                   port: 60293
                   threads: 8
-                  login_timeout: 60 
+                  login_timeout: 120
             EOF
   
 
@@ -83,7 +83,7 @@ jobs:
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
-          dbt debug 
+          dbt debug --verbose
 
       - name: Install dbt project dependencies
         run: |
