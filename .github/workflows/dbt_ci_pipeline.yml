@@ -23,21 +23,12 @@ jobs:
         with:
           python-version: '3.12' 
 
-      # Install SQL Server ODBC driver
-      - name: Install SQL Server ODBC driver
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y unixodbc-dev
-          sudo apt-get install -y gnupg2 curl
-          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
-          sudo apt-get update
-          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
-
-      # Verify that the SQL Server ODBC driver is installed correctly
-      - name: Check SQL Server ODBC driver
-        run: |
-          odbcinst -q -d -n "ODBC Driver 17 for SQL Server"
+      - name: Install SQL Server using Particular action
+        uses: Particular/install-sql-server-action@v1.2.0
+        with:
+          connection-string-env-var: SQL_SERVER_CONNECTION_STRING
+          sqlserver-version: 2019
+          catalog: deltastore_db
 
       # Install DBT dependencies
       - name: Install DBT dependencies
@@ -63,15 +54,16 @@ jobs:
               outputs:
                 dev:
                   driver: ODBC Driver 17 for SQL Server
-                  database: DeltaStore
+                  server: '$DBT_HOST'
+                  user: "$DBT_USER"
+                  password: '$DBT_PASSWORD'
+                  database: '$DBT_DATABASE'
                   schema: raw
-                  server: 169.254.222.43
-                  password: '7422'
+                  trust_cert: true
+                  type: sqlserver
                   port: 60293
                   threads: 8
-                  type: sqlserver
-                  user: Iheb
-                  trust_cert: True
+                  login_timeout: 60 
             EOF
 
       # Verify profiles.yml creation
