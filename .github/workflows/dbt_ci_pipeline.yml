@@ -5,92 +5,93 @@ on:
     branches:
       - main  
     paths:
-      - 'deltastore_dbt_transformation/**'  
+        - 'deltastore_dbt_transformation/**'  
   workflow_dispatch:
 
 jobs:
   dbt_run:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Switched from ubuntu-latest to windows-latest
     
     steps:
-      # Checkout code from GitHub repository
       - name: Checkout code
         uses: actions/checkout@v2  
 
-      # Set up Python 3.x
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12'
+          python-version: '3.12' 
 
-      # Install DBT dependencies
-      - name: Install DBT dependencies
+      - name: Install SQL Server ODBC Driver and sqlcmd
+        run: |
+          choco install sqlserver-cmdlineutils -y
+          choco install microsoft-odbc-driver-for-sql-server -y
+        shell: powershell
+
+      - name: Verify sqlcmd installation
+        run: |
+          sqlcmd -? # Check if sqlcmd is installed
+        shell: powershell
+
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install dbt-sqlserver==1.8.7
-          
-      - name: Install sqlcmd
-        run: |
-          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
-          sudo apt-get update
-          sudo ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev
-          
-      - name: Install SQL Server using Particular action
-        uses: Particular/install-sql-server-action@v1.2.0
-        with:
-          connection-string-env-var: SQL_SERVER_CONNECTION_STRING
-          sqlserver-version: 2019
-          catalog: deltastore_db
 
-      # Set up environment variables (using GitHub Secrets for credentials)
       - name: Set up environment variables
+        shell: powershell
         run: |
-            echo "DBT_HOST=${{ secrets.DBT_HOST }}" >> $GITHUB_ENV
-            echo "DBT_USER=${{ secrets.DBT_USER }}" >> $GITHUB_ENV
-            echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
-            echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
+            echo "DBT_HOST=${{ secrets.DBT_HOST }}" | Out-File -Append $env:GITHUB_ENV
+            echo "DBT_USER=${{ secrets.DBT_USER }}" | Out-File -Append $env:GITHUB_ENV
+            echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" | Out-File -Append $env:GITHUB_ENV
+            echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" | Out-File -Append $env:GITHUB_ENV
 
-      # Create profiles.yml dynamically for DBT connection
+      - name: Verify environment variables
+        run: |
+            echo "DBT_HOST=$env:DBT_HOST"
+            echo "DBT_USER=$env:DBT_USER"
+            echo "DBT_DATABASE=$env:DBT_DATABASE"
+        shell: powershell
+
       - name: Create profiles.yml
         run: |
-            mkdir -p ~/.dbt
-            cat <<EOF > ~/.dbt/profiles.yml
+            New-Item -ItemType Directory -Path $env:USERPROFILE\.dbt -Force
+            Set-Content -Path "$env:USERPROFILE\.dbt\profiles.yml" -Value @"
             deltastore_dbt_transformation:
               target: dev
               outputs:
                 dev:
                   driver: ODBC Driver 17 for SQL Server
-                  server: '$DBT_HOST'
-                  user: "$DBT_USER"
-                  password: '$DBT_PASSWORD'
-                  database: '$DBT_DATABASE'
+                  server: '$env:DBT_HOST'
+                  user: "$env:DBT_USER"
+                  password: '$env:DBT_PASSWORD'
+                  database: '$env:DBT_DATABASE'
                   schema: raw
                   trust_cert: true
                   type: sqlserver
                   port: 60293
                   threads: 8
                   login_timeout: 60 
-            EOF
+            "@
+        shell: powershell
 
-      # Verify profiles.yml creation
       - name: Verify profiles.yml creation
-        run: cat ~/.dbt/profiles.yml
+        run: Get-Content "$env:USERPROFILE\.dbt\profiles.yml"
+        shell: powershell
 
-      # Check DBT connection 
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
           dbt debug 
+        shell: powershell
 
-      # Install DBT project dependencies 
       - name: Install dbt project dependencies
         run: |
           cd deltastore_dbt_transformation
           dbt deps 
-
-      # Run all models modified models in the DBT project (slim CI)
-      - name: Test all models
+        shell: powershell
+      
+      - name: Run all models with state modified (slim CI)
         run: |
           cd deltastore_dbt_transformation
-          dbt run state:modified+
+          dbt run --state:modified+
+        shell: powershell
