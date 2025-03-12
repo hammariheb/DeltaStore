@@ -1,4 +1,4 @@
-name: dbt CI test pipeline
+name: dbt slim CI && test pipeline
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  dbt_run_ci_job:
+  dbt_slim_ci_and_test:
     runs-on: ubuntu-latest 
     
     steps:
@@ -43,11 +43,6 @@ jobs:
             echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
             echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
   
-      - name: Verify environment variables
-        run: |
-            echo "DBT_HOST=$DBT_HOST"
-            echo "DBT_USER=$DBT_USER"
-            echo "DBT_DATABASE=$DBT_DATABASE"
   
       - name: Create profiles.yml
         run: |
@@ -64,10 +59,9 @@ jobs:
                   database: '$DBT_DATABASE'
                   schema: raw
                   trust_cert: true
-                  type: sqlserver
                   port: 1433
+                  type: sqlserver
                   threads: 8
-                  login_timeout: 60 
             EOF
   
 
@@ -88,3 +82,9 @@ jobs:
         run: |
           cd deltastore_dbt_transformation
           dbt run --state modified+
+        
+      - name: test all models
+        run: |
+          cd deltastore_dbt_transformation
+          dbt test
+                
