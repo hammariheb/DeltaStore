@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  dbt_run:
+  dbt_run_ci_job:
     runs-on: ubuntu-latest 
     
     steps:
@@ -87,4 +87,4 @@ jobs:
       - name: run all models with state modified (slim ci)
         run: |
           cd deltastore_dbt_transformation
-          dbt run --state:modified+
+          dbt run --state modified+
