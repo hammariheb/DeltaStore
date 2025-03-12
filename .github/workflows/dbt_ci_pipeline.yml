@@ -81,7 +81,7 @@ jobs:
       - name: run all models with state modified (slim ci)
         run: |
           cd deltastore_dbt_transformation
-          dbt build state modified+
+          dbt run --state modified+
         
       - name: test all models
         run: |
