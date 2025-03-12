@@ -65,7 +65,7 @@ jobs:
                   schema: raw
                   trust_cert: true
                   type: sqlserver
-                  port: 60293
+                  port: 1433
                   threads: 8
                   login_timeout: 60 
             EOF
@@ -87,4 +87,4 @@ jobs:
       - name: run all models with state modified (slim ci)
         run: |
           cd deltastore_dbt_transformation
-          dbt run state:moddified+
+          dbt run --state:moddified+
