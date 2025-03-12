@@ -53,6 +53,28 @@ jobs:
             echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
             echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
 
+      - name: Test SQL Server connection with Python
+        run: |
+          python -c "
+          import pyodbc
+          conn = pyodbc.connect(
+              'DRIVER={ODBC Driver 17 for SQL Server};'
+              'SERVER=${{ secrets.DBT_HOST }};'
+              'PORT=60293;'  # Change if you use a custom port
+              'DATABASE=${{ secrets.DBT_DATABASE }};'
+              'UID=${{ secrets.DBT_USER }};'
+              'PWD=${{ secrets.DBT_PASSWORD }}'
+          )
+          cursor = conn.cursor()
+          cursor.execute('SELECT 1')
+          row = cursor.fetchone()
+          if row:
+              print('Successfully connected to SQL Server')
+          else:
+              print('Failed to connect to SQL Server')
+          conn.close()
+          "
+
       # Create profiles.yml dynamically for DBT connection
       - name: Create profiles.yml
         run: |
