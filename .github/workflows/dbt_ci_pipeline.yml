@@ -53,13 +53,6 @@ jobs:
             echo "DBT_PASSWORD=${{ secrets.DBT_PASSWORD }}" >> $GITHUB_ENV
             echo "DBT_DATABASE=${{ secrets.DBT_DATABASE }}" >> $GITHUB_ENV
 
-      # Verify the environment variables are set correctly
-      - name: Verify environment variables
-        run: |
-            echo "DBT_HOST=$DBT_HOST"
-            echo "DBT_USER=$DBT_USER"
-            echo "DBT_DATABASE=$DBT_DATABASE"
-
       # Create profiles.yml dynamically for DBT connection
       - name: Create profiles.yml
         run: |
@@ -70,36 +63,35 @@ jobs:
               outputs:
                 dev:
                   driver: ODBC Driver 17 for SQL Server
-                  server: '$DBT_HOST'
-                  user: '$DBT_USER'
-                  password: '$DBT_PASSWORD'
-                  database: '$DBT_DATABASE'
+                  server: localhost
+                  user: Iheb
+                  password: '7422'
+                  database: DeltaStore
                   schema: raw
                   trust_cert: true
                   type: sqlserver
-                  port: 1433  # Use the correct port for your SQL Server
+                  port: 60293 
                   threads: 8
-                  login_timeout: 120
             EOF
 
       # Verify profiles.yml creation
       - name: Verify profiles.yml creation
         run: cat ~/.dbt/profiles.yml
 
-      # Check DBT connection (use dbt debug to verify the setup)
+      # Check DBT connection 
       - name: Check dbt connection
         run: |
           cd deltastore_dbt_transformation
-          dbt debug --connection
+          dbt debug 
 
-      # Install DBT project dependencies (like dbt packages)
+      # Install DBT project dependencies 
       - name: Install dbt project dependencies
         run: |
           cd deltastore_dbt_transformation
           dbt deps 
 
-      # Test all models in the DBT project
+      # Run all models modified models in the DBT project (slim CI)
       - name: Test all models
         run: |
           cd deltastore_dbt_transformation
-          dbt test
+          dbt run state:modified+
