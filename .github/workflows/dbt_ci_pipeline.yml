@@ -31,6 +31,11 @@ jobs:
           sudo apt-get update
           sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
 
+      - name: check sql server
+        run: |
+          odbcinst -q -d -n "ODBC Driver 17 for SQL Server"
+
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
