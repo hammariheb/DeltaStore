@@ -115,7 +115,7 @@ models:
 
   - name: stg_incremental_monthly_customers
     description: "This is an incremental model that counts the number of new customers every month"
-    columns:
+    columns:  
       - name: monthly_subscription
         description: "This is the month of the subscription extracted from created_at column"
       - name: nb_monthly_customers
