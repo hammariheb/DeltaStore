@@ -33,7 +33,7 @@ Include any notes about things that need to happen before this PR is merged, e.g
 
 - [ ] Update dbt Cloud jobs
 
-- [ ] Ensure PR #56 is merged
+- [ ] Ensure PR is merged
 
 -->
 
