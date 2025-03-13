@@ -112,3 +112,11 @@ models:
         description: "Full name of the state."
       - name: country_name
         description: "Country name, only including 'United States'."
+        
+  - name: stg_incremental_monthly_customers
+    description: "This is an incremental model that counts the number of new customers every month"
+    columns:
+      - name: monthly_subscription
+        description: "This is the month of the subscription extracted from created_at column"
+      - name: nb_monthly_customers
+        description: "This is the count of the monthly new customers"

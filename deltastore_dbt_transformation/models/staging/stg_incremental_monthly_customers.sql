@@ -1,7 +1,8 @@
 {{
   config(
     materialized = 'incremental',
-    unique_key= 'month_subscription'
+    unique_key= 'month_subscription',
+    incremental_strategy= 'merge'
     )
 }}
 
