@@ -24,17 +24,17 @@ Each folder in the directory serves a specific purpose in the data pipeline. Det
    
    ![MIGRATION TO AZURE](pictures/migration_capture.png)
 
-### 4. **Slim CI pipeline**
+### 4. **Slim CI Job**
    - Implements **slim CI** with **GitHub Actions**:
      - Runs tests on **every pull request** in `deltastore_dbt_transforamtion`  directory.
      - Executes **state-modified+ runs** to optimize dbt transformations.
 
-### 5. **CD dbt_airflow_automation**
+### 5. **CD job**
    - Uses **Docker** to build a **custom dbt-Airflow image**.
    - Deploys **Airflow DAGs** to automate the dbt build process in the **PROD environment**, scheduled for **2 AM daily**.
     ![AIRFLOW DAG](<deltastore_airflow/screenshots/airflow_dag_jobs.png>)
 
-### 6. **UML_modelisation_overview**
+### 6. **UML modelisation overview**
    - Provides a UML model of the final marts before reporting.
 
    ![UML modelisation](<pictures/UML model.png>)
