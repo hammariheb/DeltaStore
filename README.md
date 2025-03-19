@@ -25,11 +25,11 @@ Each folder in the directory serves a specific purpose in the data pipeline. Det
    ![MIGRATION TO AZURE](pictures/migration_capture.png)
 
 ### 4. **Slim_CI__pipeline**
-   - Implements **CI with GitHub Actions**:
+   - Implements slim **CI** with **GitHub Actions**:
      - Runs tests on **every pull request** in `deltastore_dbt_transforamtion`  directory.
      - Executes **state-modified+ runs** to optimize dbt transformations.
 
-### 5. **CD dbt_airflow_automation **
+### 5. **CD dbt_airflow_automation**
    - Uses **Docker** to build a **custom dbt-Airflow image**.
    - Deploys **Airflow DAGs** to automate the dbt build process in the **PROD environment**, scheduled for **2 AM daily**.
     ![AIRFLOW DAG](<deltastore_airflow/screenshots/airflow_dag_jobs.png>)
