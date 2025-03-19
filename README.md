@@ -26,7 +26,7 @@ Each folder in the directory serves a specific purpose in the data pipeline. Det
 
 ### 4. **Slim_CI__pipeline**
    - Implements **CI with GitHub Actions**:
-     - Runs tests on **every pull request** in **deltastore_dbt_transforamtion".
+     - Runs tests on **every pull request** in **deltastore_dbt_transforamtion** directory.
      - Executes **state-modified+ runs** to optimize dbt transformations.
 
 ### 5. **CD dbt_airflow_automation **
