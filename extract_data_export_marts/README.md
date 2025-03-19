@@ -38,7 +38,7 @@ conn_string = (
 ```
 
 ### 2. **API Data Sources**
-Data is extracted from the [FakeStore API](https://fakestoreapi.com), which provides dummy e-commerce data for:
+Data is extracted from the [FakeStore API](https://fakestoreapi.com), which provides e-commerce data for:
 - `products`
 - `users`
 - `carts`
@@ -170,5 +170,5 @@ If any errors occur during the extraction or export process, they are logged and
 
 ## Usage
 ```sh
-python export_marts.py
+python export_marts_to_csv.py
 ```
