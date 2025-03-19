@@ -24,8 +24,8 @@ Each folder in the directory serves a specific purpose in the data pipeline. Det
    
    ![MIGRATION TO AZURE](pictures/migration_capture.png)
 
-### 4. **Slim_CI__pipeline**
-   - Implements slim **CI** with **GitHub Actions**:
+### 4. **Slim CI pipeline**
+   - Implements **slim CI** with **GitHub Actions**:
      - Runs tests on **every pull request** in `deltastore_dbt_transforamtion`  directory.
      - Executes **state-modified+ runs** to optimize dbt transformations.
 
