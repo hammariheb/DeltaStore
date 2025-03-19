@@ -38,7 +38,7 @@ conn_string = (
 ```
 
 ### 2. **API Data Sources**
-Data is extracted from the [FakeStore API](https://fakestoreapi.com), which provides e-commerce data for:
+Data is extracted from the [New Store API](https://fakestoreapi.com), which provides e-commerce data for:
 - `products`
 - `users`
 - `carts`
