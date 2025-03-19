@@ -10,26 +10,26 @@ This project is an end-to-end data pipeline designed to extract, transform, and 
 ## Directory Structure & Purpose
 Each folder in the directory serves a specific purpose in the data pipeline. Detailed documentation is available within each folder.
 
-### 1. **extract_data_export_marts**
+### 1. **extract_data**
    - Extracts raw data from the new store via API.
    - Loads extracted data into the **DeltaStore** database.
    
 ### 2. **deltastore_dbt_transformation**
    - Transforms raw data from both the old and new stores.
    - Creates **final marts** using dbt.
-   - Includes **staging, intermediate, and fact layers**.
+   - Includes **staging, intermediate, and marts**.
 
 ### 3. **database_migration_to_azure_sql**
    - Migrates the database from **SQL Server** to **Azure SQL** for better scalability and performance.
    
    ![MIGRATION TO AZURE](pictures/migration_capture.png)
 
-### 4. **ci_cd_pipeline**
-   - Implements **CI/CD with GitHub Actions**:
-     - Runs tests on **every pull request**.
+### 4. **Slim_CI__pipeline**
+   - Implements **CI with GitHub Actions**:
+     - Runs tests on **every pull request** in **deltastore_dbt_transforamtion".
      - Executes **state-modified+ runs** to optimize dbt transformations.
 
-### 5. **dbt_airflow_automation**
+### 5. **CD dbt_airflow_automation **
    - Uses **Docker** to build a **custom dbt-Airflow image**.
    - Deploys **Airflow DAGs** to automate the dbt build process in the **PROD environment**, scheduled for **2 AM daily**.
     ![AIRFLOW DAG](<deltastore_airflow/screenshots/airflow_dag_jobs.png>)
@@ -58,5 +58,5 @@ Each folder contains a dedicated README file explaining its purpose, structure, 
 
 ---
 
-This project demonstrates an end-to-end **modern data stack** with **automated workflows** for a scalable, efficient, and insightful data analytics pipeline!
+This project implements an end-to-end **modern data stack** with **automated workflows** for a scalable, efficient, and insightful data analytics pipeline.
 
