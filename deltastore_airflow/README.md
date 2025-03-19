@@ -132,9 +132,9 @@ with DAG(
 4. **A success notification is logged** once the job completes.
 
 ## Screeshots
-![alt text](airflow_dag.png)
+![alt text](screenshots/airflow_dag.png)
 
-![alt text](airflow_dag_jobs.png)
+![alt text](screenshots/airflow_dag_jobs.png)
 ## Summary
 This Airflow setup ensures automated, reliable execution of data transformations in `dbt` PROD environment, using a Dockerized environment with proper dependency management and scheduling. The system is scalable and can be extended to handle more complex workflows in the future.
 
