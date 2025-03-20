@@ -70,6 +70,8 @@ Marts are the final, refined data models used for business analysis and reportin
 - **`dim_payments`**: Provides a single source of truth of payments and other precious infos about payments.
 - **`fct_shipments`**: Creates a structured view of shipments details.
 
+## scripts
+- This folder is a place for Python scripts: I have created the first python file check_slo.py in order to check the execution time from the threads and to see if the models exceed a certain threshold of time.
 
 ## Project Structure
 ```
@@ -79,7 +81,9 @@ Marts are the final, refined data models used for business analysis and reportin
 │   │   ├── intermediate.yml
 │   │   ├── marts.yml
 │   │   ├── sources.yml
-│   │  
+│   │
+|   |── scripts  #python scripts
+|   | 
 │   ├── README.md
 │   ├── dbt_project.yml
 │   ├── macros
