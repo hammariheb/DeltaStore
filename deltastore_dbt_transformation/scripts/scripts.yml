@@ -1,0 +1,5 @@
+version: 2
+
+scripts:
+  - name: check_slo
+    description: "This python file ensures threads won't exceed a certain threshold using target/run_results.json"
