@@ -16,5 +16,13 @@
             "username": "Iheb",
             "password": "7422"
         }
-    ]
+    ],
+    "dbt.deferConfigPerProject": {
+        "deltastore_dbt_transformation": {
+            "manifestPathForDeferral": "c:\\Users\\Iheb\\Desktop\\Analytics\\Projects\\DeltaStore\\deltastore_dbt_transformation\\prod_artifacts",
+            "manifestPathType": "local",
+            "deferToProduction": true,
+            "favorState": false
+        }
+    }
 }
