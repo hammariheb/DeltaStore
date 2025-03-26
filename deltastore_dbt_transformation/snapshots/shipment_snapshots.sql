@@ -7,7 +7,7 @@
 
        strategy='check',
        check_cols=['shipment_status', 'delivery_date', 'shipment_date', 'carrier'],
-       hard_deletes=True  
+       invalidate_hard_deletes= True
    )
 }}
 

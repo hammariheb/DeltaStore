@@ -2,3 +2,4 @@ target/
 package-lock.yml/
 logs/
 .user.yml/
+prod_artifacts

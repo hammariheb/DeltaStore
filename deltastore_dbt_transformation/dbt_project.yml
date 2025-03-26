@@ -36,7 +36,7 @@ vars:
 models:
   deltastore_dbt_transformation: 
     staging:
-        +materialized: view
+      +materialized: view
 
     intermediate:
       +materialized: view
